@@ -1,3 +1,7 @@
+html {
+  font-size: 1rem;
+}
+
 body {
   width: 100%;
 }
@@ -17,7 +21,6 @@ nav {
 .natvigator .is-visible {
   visibility: visible;
 }
-
 
 .content {
   min-height: 1200px; 

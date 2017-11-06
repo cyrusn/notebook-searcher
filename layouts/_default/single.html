@@ -1,9 +1,26 @@
 {{ define "main" }}
-<div>
-  <h1 class="display-4">{{ .Title }} </h1>
-  {{ .Date }}
-  <p>
+<div class="text-justify">
+  <h1 class="display-4 mb-0">{{ .Title }}</h1>
+  <h3 class="text-muted">{{ .Params.subtitle }}</h3>
+  <blockquote class="blockquote">    
+    <p class="mb-0">
+      {{ .Params.discription }}
+    </p>
+    {{ if ne .Type "page" }}
+    <footer class="blockquote-footer">{{ dateFormat .Site.Params.dateFormat .Date }}</footer>
+    {{ end }}
+  </blockquote>
+  <p>{{ partial "tags.html" . }}</p>
+  <hr>
+  <div>
     {{ .Content }}
-  </p>
+  </div>
+  <hr>
+  {{ if .Site.DisqusShortname }}
+  <div class="disqus-comments">
+    {{ template "_internal/disqus.html" . }}
+  </div>
+  {{ end }}
+
 </div>
 {{ end }}

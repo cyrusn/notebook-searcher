@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body { font-family: 'Droid Serif'; }
+  h1, h2, h3 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: normal;
+  }
+  .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+img {
+  width: auto;
+  max-height: 450px;
+}
+
+li {
+  line-height: 1.2em;
+  padding: 0.1em 0;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+a:focus {
+  outline: 3px solid #80a000;
+  outline-offset: 0;
+}
+
+blockquote {
+  border-left: 5px solid #cccccc;
+  padding-left: 1em;
+  margin: 1em 0em;
+  font-style: italic;
+  color: #999999;
+}
+
+code {
+  color:#bd4147;
+  padding: 4px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border-bottom: 1px solid grey;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.8rem 0;
+}
+
+tr td:first-child,
+tr th:first-child {
+  font-weight: bold;
+  border-right: 1px solid
+}
+
+
+.column:first-of-type {
+  float: left;
+}
+.column:last-of-type {
+  float: right;
+}
+
+.split-30 .column:first-of-type {
+  width: 30%;
+}
+.split-30 .column:last-of-type {
+  width: 70%;
+}
+.split-40 .column:first-of-type {
+  width: 40%;
+}
+.split-40 .column:last-of-type {
+  width: 60%;
+}
+.split-50 .column:first-of-type {
+  width: 50%;
+}
+.split-50 .column:last-of-type {
+  width: 50%;
+}
+.split-60 .column:first-of-type {
+  width: 60%;
+}
+.split-60 .column:last-of-type {
+  width: 40%;
+}
+.split-70 .column:first-of-type {
+  width: 70%;
+}
+.split-70 .column:last-of-type {
+  width: 30%;
+}
+
+.red {
+  color: red;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 50px;
+  left: 115px;
+
+  font-size: small;
+}
+
+.footnote li:before{
+  content: "^";
+}

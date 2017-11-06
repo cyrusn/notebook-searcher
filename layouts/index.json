@@ -1,0 +1,16 @@
+[{{ range $index, $page := .Site.Pages }}
+{{- if ne $page.Type "json" -}}
+{{- if and $index (gt $index 0) -}},{{- end }}
+{
+  "index": {{ $index }},
+  "kind": "{{ $page.Kind }}",
+  "type": "{{ $page.Type }}",
+  "uri": "{{ $page.Permalink }}",
+  "title": "{{ htmlEscape $page.Title}}",
+  "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
+  "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}],
+  "description": "{{ lower (htmlEscape .Description)}}",
+  "content": {{ lower .Plain | jsonify }}
+}
+{{- end -}}
+{{- end -}}]

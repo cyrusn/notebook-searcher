@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{"/css/remark.css"|relURL}}">
+</head>
+<body>
+  <textarea id="source">
+{{ .RawContent }}
+  </textarea>
+  <script src="{{"/js/remark-latest.min.js"| relURL}}">
+  </script>
+  <script>
+    var option = {}
+    var obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
+
+    function convertDaseCaseToCamelCase (word) {
+      return word.split("-").map(function(arr, n) {
+        if ( n != 0 ) {
+          return arr[0].toUpperCase() + arr.slice(1)
+        } 
+        return arr
+      }).join("")
+    }
+    for (var prop in obj) {
+      var key = convertDaseCaseToCamelCase(prop)
+      var value = obj[prop]
+
+      option[key] = value
+    }
+
+    var slideshow = remark.create(option)
+    document.onkeypress = function(e) {
+        e = e || window.event;
+        var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+
+        if (charCode == 113) {
+            window.location.href = '/'
+        }
+    };
+    var anchor = document.getElementsByTagName("a");
+    anchor.forEach( a => {
+      a.setAttribute('target', '_blank')
+    })
+
+  </script>
+</body>

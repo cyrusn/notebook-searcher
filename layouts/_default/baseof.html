@@ -4,8 +4,9 @@
   {{partial "head.html" .}}
 </head>
 <body>
+
   {{ block "header" . }}{{partial "header.html" .}}{{ end }}
-  <div class="container">
+  <div class="container mt-2">
     {{ block "main" . }}{{partial "search.html" . }}{{ end }}
     {{ block "footer" . }}{{partial "footer.html" .}}{{ end }}
   </div>
