@@ -1,30 +1,25 @@
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-lg-8">
-      <div class="input-group input-group-lg" id="search-area">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search notes"
-          aria-label="Search Notes"
-          aria-describedby="basic-addon2"
-          id="search-box">
-      </div>
-      <p class="text-secondary">
-        <small>
-          <span class="font-weight-bold">filters: </span>
-          <span class="badge badge-light">title:</span>
-          <span class="badge badge-light">description:</span>
-          <span class="badge badge-light">tags:</span> 
-          <span class="badge badge-light">content:</span> 
-          <span class="badge badge-light">*</span> 
-          <a class="badge badge-primary" href="https://lunrjs.com/guides/searching.html">learn more...</a>
-        </small>
-      </p>
-      <hr>
-      <div id="search-result"></div>
-    </div>
+<div class="container mx-auto w-75">
+  <div class="input-group input-group-lg" id="search-area">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search notes"
+      aria-label="Search Notes"
+      aria-describedby="basic-addon2"
+      id="search-box">
   </div>
+  <p class="text-secondary">
+    <small>
+      <span class="font-weight-bold">filters: </span>
+      <span class="badge badge-light">title:</span>
+      <span class="badge badge-light">description:</span>
+      <span class="badge badge-light">tags:</span> 
+      <span class="badge badge-light">content:</span> 
+      <span class="badge badge-light">*</span> 
+      <a class="badge badge-primary" href="https://lunrjs.com/guides/searching.html">learn more...</a>
+    </small>
+  </p>
+  <hr>
+  <div id="search-result"></div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/horsey/4.2.2/horsey.js"></script>
 <script src="/js/search.js"></script>

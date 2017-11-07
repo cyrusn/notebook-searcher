@@ -9,6 +9,7 @@
   </textarea>
   <script src="{{"/js/remark-latest.min.js"| relURL}}">
   </script>
+  {{ partial "katex.html" . }}
   <script>
     var option = {}
     var obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
@@ -27,8 +28,11 @@
 
       option[key] = value
     }
-
+    {{ if .Params.katex }}
+    var slideshow = remark.create(option, renderMath)
+    {{ else }}
     var slideshow = remark.create(option)
+    {{ end }}
     document.onkeypress = function(e) {
         e = e || window.event;
         var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
@@ -41,6 +45,5 @@
     anchor.forEach( a => {
       a.setAttribute('target', '_blank')
     })
-
   </script>
 </body>

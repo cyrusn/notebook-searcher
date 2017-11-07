@@ -3,7 +3,6 @@ $(document).ready(function (e) {
   // press h goto home
   $('body').on('keydown', function (e) {
     var keyCode = e.keyCode || e.which
-    console.log(keyCode)
     if (keyCode === 81) {
       window.location.href = '/'
     }
