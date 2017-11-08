@@ -27,69 +27,8 @@ function initLunr (cb) {
 
 initLunr(function () {
   $('#search-box').focus()
-  listenNatvigatorKey()
   $(document).ready(listenQuery)
 })
-
-function listenNatvigatorKey () {
-  const keyList = [{
-    keyCode: 74, // k
-    action: 'down'
-  }, {
-    keyCode: 75, // k
-    action: 'up'
-  }, {
-    keyCode: 13, // enter
-    action: 'go'
-  }]
-
-  $(document).on('keydown', function (e) {
-    // You may replace `c` with whatever key you want
-    const keyCode = e.keyCode || e.which
-    const key = keyList.filter(obj => obj.keyCode === keyCode)[0]
-    if ((e.metaKey) && key) {
-      natvigateResultList(key.action)
-    }
-  })
-}
-
-function natvigateResultList (action) {
-  var $active = $('div.active')
-  var $list = $('.search-result-list')
-  switch (action) {
-    case 'down':
-      toggleActive($active)
-      var $next = $active.next()
-      toggleActive($next)
-
-      if ($active.next().length === 0) {
-        toggleActive($list.eq(0))
-      }
-      break
-    case 'up':
-      toggleActive($active)
-      var $prev = $active.prev()
-      toggleActive($prev)
-
-      if ($prev.length === 0) {
-        toggleActive($list.eq(-1))
-      }
-      break
-    case 'go':
-      const link = $('.active a').attr('href')
-      if (link) {
-        window.location.href = link
-      }
-      break
-    default:
-  }
-}
-
-function toggleActive (el) {
-  el.toggleClass('active')
-  el.find('.text-muted, .text-light').toggleClass('text-muted text-light')
-  el.find('.badge-secondary, .badge-light').toggleClass('badge-secondary badge-light')
-}
 
 function search (query) {
   return lunrIndex.search(query)
@@ -103,7 +42,7 @@ function search (query) {
 
 function listenQuery () {
   var searchBox = $('#search-box')
-  searchBox.on('input focus', () => {
+  searchBox.on('input', () => {
     var query = searchBox.val().toLowerCase()
     searchResult = search(query)
     displaySearchResults(searchResult, pageIndex)
@@ -120,7 +59,7 @@ function displaySearchResults (results, pageIndex) {
     return `
     <div 
       id='list-${key}'
-      class="search-result-list list-group-item list-group-item-action flex-column align-items-start ${active}">
+      class="list-group-item list-group-item-action flex-column align-items-start ${active}">
 
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1"><a class="${muted}" href="${uri}">${title}</a></h5>

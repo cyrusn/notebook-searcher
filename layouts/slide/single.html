@@ -14,16 +14,17 @@
     var option = {}
     var obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
 
-    function convertDaseCaseToCamelCase (word) {
+    function convertDashCaseToCamelCase (word) {
       return word.split("-").map(function(arr, n) {
         if ( n != 0 ) {
           return arr[0].toUpperCase() + arr.slice(1)
-        } 
+        }
         return arr
       }).join("")
     }
+
     for (var prop in obj) {
-      var key = convertDaseCaseToCamelCase(prop)
+      var key = convertDashCaseToCamelCase(prop)
       var value = obj[prop]
 
       option[key] = value

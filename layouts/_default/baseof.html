@@ -6,7 +6,7 @@
 <body>
 
   {{ block "header" . }}{{partial "header.html" .}}{{ end }}
-  <div class="container mt-2">
+  <div class="container mt-2 mx-auto">
     {{ block "main" . }}{{partial "search.html" . }}{{ end }}
     {{ block "footer" . }}{{partial "footer.html" .}}{{ end }}
   </div>
