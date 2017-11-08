@@ -39,3 +39,13 @@
 
 <!-- main.js (for navigate the list and other customization)-->
 <script src="/js/main.js"></script>
+<script>
+const pageKind = {{.Kind}}
+const navLinks = ['/']
+{{ range .Site.Menus.main.ByWeight }}
+  navLinks.push("{{.URL | relURL }}")
+{{end}}
+
+var Paginator = {}
+
+</script>

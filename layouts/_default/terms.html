@@ -1,13 +1,13 @@
-{{ define "main" }} 
+{{ define "main" }}
 <div class="text-center">
   <h1 class="display-4">{{ .Title }}</h1>
   <hr>
-  <div class="mx-auto w-75">
+  <div class="mx-auto">
     {{ $data := .Data }}
     <div class="mx-auto text-justify">
       {{ range $key, $value := .Data.Terms.ByCount }}
       <a class="badge badge-pill badge-secondary" href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}" >
-        {{ $value.Name }} <span class="badge badge-light">{{ $value.Count }} </span> 
+        {{ $value.Name }} <span class="badge badge-light">{{ $value.Count }} </span>
       </a>
       {{ end }}
     </div>

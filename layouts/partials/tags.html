@@ -1,3 +1,13 @@
-{{ range .Params.tags }}
+{{ with .Params.tags }}
+{{if . }}
+<small>
+{{ if $.Params.draft }}
+  <span class="badge badge-danger">Draft</span>
+{{end}}
+{{ range . }}
   <a class="badge badge-secondary" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
 {{ end }}
+</small>
+{{end}}
+{{end}}
+
