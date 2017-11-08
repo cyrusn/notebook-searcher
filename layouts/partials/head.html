@@ -1,4 +1,4 @@
-<meta charset="utf-8">  
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- The suggested setting for bootstrap v4.0 -->
@@ -16,7 +16,7 @@
   <meta name="twitter:description" content="{{ . | truncate 200 }}">
 {{- end }}
 
-<!-- About Authior -->
+<!-- About Author -->
 <meta name="author" content="{{ .Site.Author.name }}"/>
 
 <!-- Favicon -->
@@ -24,19 +24,18 @@
   <link href='{{ . | relURL }}' rel='icon' type='image/x-icon'/>
 {{- end -}}
 
+
 <!-- Bootstrap -->
-<script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
 <script src='{{ "/js/jquery-3.2.1.slim.min.js" | relURL }}'></script>
 <script src='{{ "/js/popper.min.js" | relURL }}'></script>
-
-<link rel="stylesheet" type="text/css" href='{{ "/css/bootstrap.min.css" | relURL }}'>
 <script src='{{ "/js/bootstrap.min.js" | relURL }}' ></script>
+<link rel="stylesheet" type="text/css" href='{{ "/css/bootstrap.min.css" | relURL }}'>
 
-<!-- Lunr Search Engine -->
+<!-- Lunr the Search Engine -->
 <script src=' {{ "/js/lunr.min.js" | relURL }} '></script>
 
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href='{{ "/css/style.css" | relURL }}'>
 
-<!-- main.js -->
+<!-- main.js (for navigate the list and other customization)-->
 <script src="/js/main.js"></script>

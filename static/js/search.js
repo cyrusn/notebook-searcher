@@ -3,9 +3,7 @@ var pageIndex, lunrIndex, searchResult
 
 function initLunr (cb) {
   fetch('/index.json')
-  .then((response) => {
-    return response.json()
-  })
+  .then(response => response.json())
   .then(data => {
     pageIndex = data
     lunrIndex = lunr(function () {
@@ -25,7 +23,7 @@ function initLunr (cb) {
   .then(cb)
 }
 
-initLunr(function () {
+initLunr(() => {
   $('#search-box').focus()
   $(document).ready(listenQuery)
 })
@@ -41,23 +39,23 @@ function search (query) {
 }
 
 function listenQuery () {
-  var searchBox = $('#search-box')
+  let searchBox = $('#search-box')
   searchBox.on('input', () => {
-    var query = searchBox.val().toLowerCase()
+    let query = searchBox.val().toLowerCase()
     searchResult = search(query)
     displaySearchResults(searchResult, pageIndex)
   })
 }
 
 function displaySearchResults (results, pageIndex) {
-  var listItems = results.map(({index, date, uri, title, tags}, key) => {
+  let listItems = results.map(({index, date, uri, title, tags}, key) => {
     const active = key === 0 ? 'active' : ''
     const muted = key !== 0 ? 'text-muted' : 'text-light'
     const badge = key === 0 ? 'badge-light' : 'badge-secondary'
 
-    var badges = tags.map((word) => `<a href="/tags/${word}" class='badge badge-pill ${badge}'>${word}</a>`).join(' ')
+    let badges = tags.map((word) => `<a href="/tags/${word}" class='badge badge-pill ${badge}'>${word}</a>`).join(' ')
     return `
-    <div 
+    <div
       id='list-${key}'
       class="list-group-item list-group-item-action flex-column align-items-start ${active}">
 

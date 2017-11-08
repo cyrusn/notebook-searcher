@@ -1,11 +1,10 @@
 {{ if .Params.Katex }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<script src='{{"/js/katex.min.js" | relURL}}'></script>
+<script src='{{"/js/auto-render.min.js" | relURL}}'></script>
+<link rel="stylesheet" href='{{"/css/katex.min.css" | relURL}}'>
 <script type="text/javascript">
   function renderMath () {
     renderMathInElement(document.body)
   }
-</script>
 </script>
 {{ end }}

@@ -2,49 +2,41 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="{{"/css/remark.css"|relURL}}">
+  <!-- RemarkJS (for slide view) -->
+  <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
+
 </head>
 <body>
   <textarea id="source">
-{{ .RawContent }}
+    {{ .RawContent }}
   </textarea>
   <script src="{{"/js/remark-latest.min.js"| relURL}}">
   </script>
   {{ partial "katex.html" . }}
   <script>
-    var option = {}
-    var obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
-
-    function convertDashCaseToCamelCase (word) {
-      return word.split("-").map(function(arr, n) {
-        if ( n != 0 ) {
-          return arr[0].toUpperCase() + arr.slice(1)
-        }
-        return arr
-      }).join("")
+    const option = {}
+    const obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
+    function dashToCamelCase (word) {
+      return word.split("-").map((arr, n) =>
+        ( n === 0 ) ? arr : (arr[0].toUpperCase() + arr.slice(1))
+        ).join("")
     }
-
-    for (var prop in obj) {
-      var key = convertDashCaseToCamelCase(prop)
-      var value = obj[prop]
-
-      option[key] = value
+    for (const key in obj) {
+      option[dashToCamelCase(key)] = obj[key]
     }
     {{ if .Params.katex }}
-    var slideshow = remark.create(option, renderMath)
+    const slideshow = remark.create(option, renderMath)
     {{ else }}
-    var slideshow = remark.create(option)
+    const slideshow = remark.create(option)
     {{ end }}
     document.onkeypress = function(e) {
-        e = e || window.event;
-        var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
-
-        if (charCode == 113) {
-            window.location.href = '/'
-        }
+      e = e || window.event;
+      const charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+      if (charCode == 113) {
+        window.location.href = '/'
+      }
     };
-    var anchor = document.getElementsByTagName("a");
-    anchor.forEach( a => {
-      a.setAttribute('target', '_blank')
-    })
+    Array.from(document.getElementsByTagName("a"))
+    .forEach(a => a.setAttribute('target', '_blank'))
   </script>
 </body>

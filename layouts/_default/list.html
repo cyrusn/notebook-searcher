@@ -6,19 +6,19 @@
     {{ partial "pagination.html" . }}
     <div class="list-group">
       {{ range $index, $el :=.Paginator.Pages }}
-      <div 
+      <div
       id='list-{{$index}}'
       class="list-group-item list-group-item-action list-group-item-light {{if eq $index 0}}active{{end}}">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">
           <a class="{{if eq $index 0}}text-light{{else}}text-muted{{end}}" href="{{ $el.Permalink | relURL }}">{{ $el.Title }}</a>
-        </h5>          
+        </h5>
         <small>{{ dateFormat .Site.Params.dateFormat $el.Date }}</small>
       </div>
       <div class='mb-0'>
         <small>
           <a class="{{if eq $index 0}}text-light{{else}}text-muted{{end}}" href="{{ .Permalink | relURL }}">{{ $el.Permalink | relURL }}</a>
-        </small>          
+        </small>
       </div>
       <div class='mt-0'>
         <small>
@@ -31,6 +31,8 @@
 </div>
 
 <script type="text/javascript">
+  /* global $ */
+  // change the correct class for the first list which is .active by default
   $('#list-0').find('.badge, .badge-secondary').toggleClass('badge-light badge-secondary')
 </script>
 
