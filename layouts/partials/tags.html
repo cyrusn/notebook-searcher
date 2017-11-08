@@ -2,7 +2,7 @@
 {{if . }}
 <small>
 {{ if $.Params.draft }}
-  <span class="badge badge-danger">Draft</span>
+  <span class="badge badge-danger">draft</span>
 {{end}}
 {{ range . }}
   <a class="badge badge-secondary" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>

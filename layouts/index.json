@@ -10,7 +10,8 @@
   "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
   "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}],
   "description": "{{ lower (htmlEscape .Description)}}",
-  "content": {{ lower .Plain | jsonify }}
+  "content": {{ lower .Plain | jsonify }},
+  "draft": {{$page.Draft}}
 }
 {{- end -}}
 {{- end -}}]

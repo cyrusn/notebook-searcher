@@ -48,12 +48,14 @@ function listenQuery () {
 }
 
 function displaySearchResults (results, pageIndex) {
-  let listItems = results.map(({index, date, uri, title, tags}, key) => {
+  let listItems = results.map(({draft, index, date, uri, title, tags}, key) => {
     const active = key === 0 ? 'active' : ''
     const muted = key !== 0 ? 'text-muted' : 'text-light'
     const badge = key === 0 ? 'badge-light' : 'badge-secondary'
-
-    let badges = tags.map((word) => `<a href="/tags/${word}" class='badge badge-pill ${badge}'>${word}</a>`).join(' ')
+    const badges = tags.map((word) => `<a href="/tags/${word}" class='badge ${badge}'>${word}</a>`)
+    if (draft) {
+      badges.unshift(`<span class="badge badge-danger">draft</span>`)
+    }
     return `
     <div
       id='list-${key}'
@@ -67,7 +69,7 @@ function displaySearchResults (results, pageIndex) {
         <a class="${muted}" href="${uri}"> ${uri.replace(window.location.origin, '')} </a>
       </p>
       <small>
-        ${badges}
+        ${badges.join(' ')}
       </small>
     </div>`
   }).join('')
