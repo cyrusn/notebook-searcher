@@ -1,39 +1,44 @@
-<div class="natvigator sticky-top">
-  <div class="bg-light bg-light" data-nav-status="toggle">
-    <nav class="mx-auto navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="{{ "" | absLangURL }}">{{ .Site.Author.name }}</a>
+<div class="d-md-flex justify-content-center bg-light">
+<nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand text-center"
+    href="{{ "" | absLangURL }}">
+    {{ .Site.Author.name }}
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {{ range .Site.Menus.main.ByWeight }}
 
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          {{ range .Site.Menus.main.ByWeight }}
-          {{ if .HasChildren }}
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ .Name }}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            {{ range .Children }}
-            <a class="dropdown-item" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-            {{ end }}
-          </div>
-          {{ else }}
-          <li>
-            <a class="nav-link" title="{{ .Name }}" href="{{ .URL  | relLangURL }}">{{ .Name }}</a>
-          </li>
-            {{ end }}
-          {{ end }}
-        </ul>
+      <!-- for sub-menu -->
+      {{ if .HasChildren }}
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ .Name }}
+        </a>
+      </li>
+      <div class="dropdown-menu" aria-labelledby="navbarNav">
+        {{ range .Children }}
+        <a class="dropdown-item" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        {{ end }}
       </div>
-    </nav>
+      {{ else }}
+      <li class="nav-item">
+        <a class="nav-link" title="{{ .Name }}" href="{{ .URL  | relLangURL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
   </div>
+
+</nav>
 </div>

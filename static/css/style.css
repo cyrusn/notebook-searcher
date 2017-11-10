@@ -10,18 +10,6 @@ body {
   max-width: 60rem
 }
 
-nav {
-  width: fit-content;
-}
-
-.natvigator .is-hidden {
-  visibility: hidden;
-}
-
-.natvigator .is-visible {
-  visibility: visible;
-}
-
 .content {
-  min-height: 1200px; 
+  min-height: 1200px;
 }

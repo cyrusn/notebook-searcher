@@ -6,27 +6,11 @@ $(document).ready(e => {
   $('img').addClass('img-fluid')
   $('table').addClass('table table-hover table-sm')
   $('thead').addClass('thead-dark text-center')
+  $('blockquote').addClass('my-4 ml-5 pl-4 lead blockquote text-justify').css('border-left', '4px solid #868e96')
+  $('blockquote footer').addClass('blockquote-footer text-right')
   // Enable HighlightJS
   $('pre code').each(function (i, block) {
     hljs.highlightBlock(block)
-  })
-  // Hidden navbar when scroll down, will show when scroll up
-  let previousScroll = 0
-  $(window).scroll(function () {
-    let currentScroll = $(this).scrollTop()
-    if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
-      const $status = $("[data-nav-status='toggle']")
-      if (currentScroll > previousScroll) {
-        window.setTimeout(function () {
-          $status.removeClass('is-visible').addClass('is-hidden')
-        }, 300)
-      } else {
-        window.setTimeout(function () {
-          $status.removeClass('is-hidden').addClass('is-visible')
-        }, 300)
-      }
-      previousScroll = currentScroll
-    }
   })
 })
 
@@ -74,8 +58,7 @@ function natvigateList (keyCode, event) {
       break
     case (keyCode === 74): // j
       if (pageKind === 'page') {
-        let y = $(window).scrollTop()
-        $(window).scrollTop(y + 200)
+        scrollPage('down', 80)
       } else {
         toggleActive($active)
         const $next = $active.next()
@@ -84,12 +67,12 @@ function natvigateList (keyCode, event) {
         if ($next.length === 0) {
           toggleActive($list.eq(0))
         }
+        scrollActiveListToCenter()
       }
       break
     case (keyCode === 75): // k
       if (pageKind === 'page') {
-        let y = $(window).scrollTop()
-        $(window).scrollTop(y - 200)
+        scrollPage('up', 80)
       } else {
         toggleActive($active)
         const $prev = $active.prev()
@@ -98,6 +81,7 @@ function natvigateList (keyCode, event) {
         if ($prev.length === 0) {
           toggleActive($list.eq(-1))
         }
+        scrollActiveListToCenter()
       }
       break
     case (keyCode === 191 && !onFocus): // "/"
@@ -123,6 +107,15 @@ function natvigateList (keyCode, event) {
   }
 }
 
+function scrollActiveListToCenter () {
+  $('.active')[0]
+    .scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'nearest'
+    })
+}
+
 function toggleActive (el) {
   el.toggleClass('active')
 
@@ -137,4 +130,20 @@ function toggleActive (el) {
   arr.forEach(({from, to}) => {
     el.find(from).toggleClass(to)
   })
+}
+
+function scrollPage(direction, value) {
+  let directedValue
+  switch (direction) {
+    case 'down':
+      directedValue = value
+      break
+    case 'up':
+      directedValue = -value
+      break
+    default:
+  }
+
+  let y = $(window).scrollTop()
+  $(window).scrollTop(y + directedValue)
 }

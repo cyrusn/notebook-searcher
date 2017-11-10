@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{{"/css/remark.css"|relURL}}">
   <!-- RemarkJS (for slide view) -->
+  <link rel="stylesheet" href="{{"/css/remark.css"|relURL}}">
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
 
 </head>
 <body>
-  <textarea id="source">
-    {{ .RawContent }}
-  </textarea>
-  <script src="{{"/js/remark-latest.min.js"| relURL}}">
+  <textarea id="source">{{ .RawContent }}</textarea>
   </script>
   {{ partial "katex.html" . }}
   <script>
@@ -29,9 +26,8 @@
     {{ else }}
     const slideshow = remark.create(option)
     {{ end }}
-    document.onkeypress = function(e) {
-      e = e || window.event;
-      const charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+    document.onkeypress = ({which, keyCode} = window.event) => {
+      const charCode = (typeof which == "number") ? which : keyCode;
       if (charCode == 113) {
         window.location.href = '/'
       }
