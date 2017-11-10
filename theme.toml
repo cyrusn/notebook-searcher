@@ -4,7 +4,7 @@
 name = "Notebook Searcher"
 license = "MIT"
 licenselink = "https://github.com/cyrusn/notebook-searcher/blob/master/LICENSE.md"
-description = "A simple theme for "
+description = "A simple theme for Hugo"
 homepage = "http://example.com/"
 tags = ["minimal", "bootstrap"]
 features = []

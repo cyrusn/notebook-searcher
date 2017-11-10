@@ -108,7 +108,7 @@ function natvigateList (keyCode, event) {
 }
 
 function scrollActiveListToCenter () {
-  $('.active')[0]
+  $('.list-group-item.active')[0]
     .scrollIntoView({
       behavior: 'smooth',
       block: 'center',
