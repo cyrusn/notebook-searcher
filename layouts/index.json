@@ -6,11 +6,11 @@
   "kind": "{{ $page.Kind }}",
   "type": "{{ $page.Type }}",
   "uri": "{{ $page.Permalink }}",
-  "title": "{{ htmlEscape $page.Title}}",
+  "title": "{{ lower (htmlEscape $page.Title)}}",
+  "subtitle": "{{ lower (htmlEscape $page.Params.subtitle)}}",
   "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
-  "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}],
+  "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ lower (htmlEscape $tag) }}"{{ end }}],
   "description": "{{ lower (htmlEscape .Description)}}",
-  "content": {{ lower .Plain | jsonify }},
   "draft": {{$page.Draft}}
 }
 {{- end -}}

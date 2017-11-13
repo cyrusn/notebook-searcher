@@ -5,34 +5,47 @@
   <link rel="stylesheet" href="{{"/css/remark.css"|relURL}}">
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
 
+  {{if .Params.katex}}
+  <script src='{{"/js/katex.min.js" | relURL}}'></script>
+  <script src='{{"/js/auto-render.min.js" | relURL}}'></script>
+  <link rel="stylesheet" href='{{"/css/katex.min.css" | relURL}}'>
+  {{end}}
+
 </head>
 <body>
   <textarea id="source">{{ .RawContent }}</textarea>
-  </script>
   {{ partial "katex.html" . }}
   <script>
+    // parsing for remark option:
+    // as config.toml package is case insensitive, therefore key in config.toml
+    // will be dash-case, will convert to camalCase and pipe to remark option
     const option = {}
     const obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
+
     function dashToCamelCase (word) {
       return word.split("-").map((arr, n) =>
         ( n === 0 ) ? arr : (arr[0].toUpperCase() + arr.slice(1))
         ).join("")
     }
+
     for (const key in obj) {
       option[dashToCamelCase(key)] = obj[key]
     }
+
     {{ if .Params.katex }}
     const slideshow = remark.create(option, renderMath)
     {{ else }}
     const slideshow = remark.create(option)
     {{ end }}
+  </script>
+
+  <!-- press q to home -->
+  <script type="text/javascript">
     document.onkeypress = ({which, keyCode} = window.event) => {
-      const charCode = (typeof which == "number") ? which : keyCode;
-      if (charCode == 113) {
+      const charCode = (typeof which === 'number') ? which : keyCode
+      if (charCode === 113) {
         window.location.href = '/'
       }
-    };
-    Array.from(document.getElementsByTagName("a"))
-    .forEach(a => a.setAttribute('target', '_blank'))
+    }
   </script>
 </body>

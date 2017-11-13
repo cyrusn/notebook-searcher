@@ -8,10 +8,10 @@ function initLunr (cb) {
     pageIndex = data
     lunrIndex = lunr(function () {
       this.ref('index')
-      this.field('title', {boost: 15})
+      this.field('title', {boost: 20})
+      this.field('subtitle', {boost: 15})
       this.field('tags', {boost: 10})
       this.field('description', {boost: 5})
-      this.field('content', {boost: 5})
 
       pageIndex.forEach(function (doc) {
         this.add(doc)
@@ -33,7 +33,7 @@ function search (query) {
   .map(result => {
     return Object.assign({
       score: result.score
-    }, pageIndex[result.ref], {content: ''})
+    }, pageIndex[result.ref])
   })
   .filter(a => a.score > 0.1)
 }

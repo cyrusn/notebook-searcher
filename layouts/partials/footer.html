@@ -1,10 +1,12 @@
 <!-- highlightJS -->
-
 <link rel="stylesheet" href='{{ "/css/atom-one-dark.css" | relURL }}'>
 <script src='{{ "/js/highlight.pack.js" | relURL }}'></script>
 
 <!-- katex - math equation renderer -->
-{{ if .Params.katex }}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+{{ if .Params.Katex }}
+{{ partial "katex.html" . }}
+<script>
+  /* global renderMath */
+  renderMath()
 </script>
 {{ end }}

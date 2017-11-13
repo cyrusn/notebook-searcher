@@ -1,10 +1,17 @@
-{{ if .Params.Katex }}
 <script src='{{"/js/katex.min.js" | relURL}}'></script>
-<script src='{{"/js/auto-render.min.js" | relURL}}'></script>
 <link rel="stylesheet" href='{{"/css/katex.min.css" | relURL}}'>
+<script src='{{"/js/auto-render.min.js" | relURL}}'></script>
 <script type="text/javascript">
+  /* global renderMathInElement */
   function renderMath () {
-    renderMathInElement(document.body)
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      ignoredTags: ['br']
+    })
   }
 </script>
-{{ end }}

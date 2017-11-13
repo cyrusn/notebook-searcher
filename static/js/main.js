@@ -1,12 +1,14 @@
 /* global $ hljs window Paginator navLinks pageKind */
 $(document).ready(e => {
-  // press h goto home
   listenKeys()
-  // add Responsive Image to `img` tag
+
   $('img').addClass('img-fluid')
-  $('table').addClass('table table-hover table-sm')
+  $('table').addClass('table table-hover table-sm table-bordered')
+  $('th, td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
-  $('blockquote').addClass('my-4 ml-5 pl-4 lead blockquote text-justify').css('border-left', '4px solid #868e96')
+  $('blockquote')
+    .addClass('blockquote ml-5 px-4 py-2 lead text-justify border-secondary')
+    .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
   // Enable HighlightJS
   $('pre code').each(function (i, block) {
@@ -17,11 +19,11 @@ $(document).ready(e => {
 function listenKeys () {
   $(document).on('keydown', event => {
     const {keyCode, which} = event
-    natvigateList(keyCode || which, event)
+    navigatee(keyCode || which, event)
   })
 }
 
-function natvigateList (keyCode, event) {
+function navigatee (keyCode, event) {
   // console.log(keyCode)
   let $active = $('div.active')
   let $list = $('.list-group-item')
@@ -47,39 +49,41 @@ function natvigateList (keyCode, event) {
         }
       })
       break
-    case (keyCode === 78 && hasNext): // n
+    case (keyCode === 78 && hasNext && !onFocus): // n
       window.location.pathname = nextPage
       break
-    case (keyCode === 80 && hasPrev): // p
+    case (keyCode === 80 && hasPrev && !onFocus): // p
       window.location.pathname = prevPage
       break
     case (keyCode === 81 && !onFocus): // q
       window.location.href = '/'
       break
-    case (keyCode === 74): // j
+    case (keyCode === 74 && !onFocus): // j
       if (pageKind === 'page') {
         scrollPage('down', 80)
       } else {
         toggleActive($active)
         const $next = $active.next()
-        toggleActive($next)
 
         if ($next.length === 0) {
           toggleActive($list.eq(0))
+        } else {
+          toggleActive($next)
         }
         scrollActiveListToCenter()
       }
       break
-    case (keyCode === 75): // k
+    case (keyCode === 75 && !onFocus): // k
       if (pageKind === 'page') {
         scrollPage('up', 80)
       } else {
         toggleActive($active)
         const $prev = $active.prev()
-        toggleActive($prev)
 
         if ($prev.length === 0) {
           toggleActive($list.eq(-1))
+        } else {
+          toggleActive($prev)
         }
         scrollActiveListToCenter()
       }
@@ -132,7 +136,7 @@ function toggleActive (el) {
   })
 }
 
-function scrollPage(direction, value) {
+function scrollPage (direction, value) {
   let directedValue
   switch (direction) {
     case 'down':
