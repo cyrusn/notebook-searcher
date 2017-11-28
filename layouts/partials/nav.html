@@ -1,44 +1,45 @@
-<div class="d-md-flex justify-content-center bg-light">
-<nav class="navbar navbar-expand-md navbar-light">
-  <a class="navbar-brand text-center"
-    href="{{ "" | absLangURL }}">
-    {{ .Site.Author.name }}
-  </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="bg-light d-md-flex justify-content-center">
+    <nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand text-center"
+      href="{{ "" | absLangURL }}">
+      {{ .Site.Author.name }}
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      {{ range .Site.Menus.main.ByWeight }}
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {{ range .Site.Menus.main.ByWeight }}
 
-      <!-- for sub-menu -->
-      {{ if .HasChildren }}
-      <li class="nav-item">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ .Name }}
-        </a>
-      </li>
-      <div class="dropdown-menu" aria-labelledby="navbarNav">
-        {{ range .Children }}
-        <a class="dropdown-item" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        <!-- for sub-menu -->
+        {{ if .HasChildren }}
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Name }}
+          </a>
+        </li>
+        <div class="dropdown-menu" aria-labelledby="navbarNav">
+          {{ range .Children }}
+          <a class="dropdown-item" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+          {{ end }}
+        </div>
+        {{ else }}
+        <li class="nav-item">
+          <a class="nav-link" title="{{ .Name }}" href="{{ .URL  | relLangURL }}">{{ .Name }}</a>
+        </li>
         {{ end }}
-      </div>
-      {{ else }}
-      <li class="nav-item">
-        <a class="nav-link" title="{{ .Name }}" href="{{ .URL  | relLangURL }}">{{ .Name }}</a>
-      </li>
-      {{ end }}
-      {{ end }}
-    </ul>
-  </div>
-
-</nav>
+        {{ end }}
+      </ul>
+    </div>
+    <button type="button" class="d-none d-md-block d-lg-block btn btn-sm align-middle btn-outline-success" data-toggle="modal" data-target="#tipsModal">tips</button>
+  </nav>
 </div>
+{{ partial "tips.html" . }}

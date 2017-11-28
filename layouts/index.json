@@ -6,12 +6,10 @@
   "kind": "{{ $page.Kind }}",
   "type": "{{ $page.Type }}",
   "uri": "{{ $page.Permalink }}",
-  "title": "{{ lower (htmlEscape $page.Title)}}",
-  "subtitle": "{{ lower (htmlEscape $page.Params.subtitle)}}",
+  "draft": {{$page.Draft}},
   "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
-  "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ lower (htmlEscape $tag) }}"{{ end }}],
-  "description": "{{ lower (htmlEscape .Description)}}",
-  "draft": {{$page.Draft}}
+  "title": "{{ htmlEscape $page.Title }}",
+  "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ lower (htmlEscape $tag) }}"{{ end }}]
 }
 {{- end -}}
 {{- end -}}]

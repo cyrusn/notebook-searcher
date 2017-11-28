@@ -1,9 +1,17 @@
+<small>
+  {{ if $.Params.draft }}
+    <span class="badge badge-danger">draft</span>
+  {{end}}
+  {{ if $.Params.abcjs }}
+    <span class="badge badge-primary">abcjs</span>
+  {{end}}
+  {{ if $.Params.katex }}
+    <span class="badge badge-primary">katex</span>
+  {{end}}
+</small>
 {{ with .Params.tags }}
 {{if . }}
 <small>
-{{ if $.Params.draft }}
-  <span class="badge badge-danger">draft</span>
-{{end}}
 {{ range . }}
   <a class="badge badge-secondary" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
 {{ end }}

@@ -11,6 +11,8 @@
   <link rel="stylesheet" href='{{"/css/katex.min.css" | relURL}}'>
   {{end}}
 
+  {{ partial "abcjs.html" . }}
+
 </head>
 <body>
   <textarea id="source">{{ .RawContent }}</textarea>

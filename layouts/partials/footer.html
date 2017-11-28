@@ -3,10 +3,6 @@
 <script src='{{ "/js/highlight.pack.js" | relURL }}'></script>
 
 <!-- katex - math equation renderer -->
-{{ if .Params.Katex }}
 {{ partial "katex.html" . }}
-<script>
-  /* global renderMath */
-  renderMath()
-</script>
-{{ end }}
+
+

@@ -88,7 +88,7 @@ function navigatee (keyCode, event) {
         scrollActiveListToCenter()
       }
       break
-    case (keyCode === 191 && !onFocus): // "/"
+    case (keyCode === 32 && !onFocus): // "space"
       event.preventDefault()
       if (isDisabled) {
         searchBox.prop('disabled', false)

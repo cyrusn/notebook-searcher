@@ -8,10 +8,8 @@ function initLunr (cb) {
     pageIndex = data
     lunrIndex = lunr(function () {
       this.ref('index')
-      this.field('title', {boost: 20})
-      this.field('subtitle', {boost: 15})
-      this.field('tags', {boost: 10})
-      this.field('description', {boost: 5})
+      this.field('title')
+      this.field('tags')
 
       pageIndex.forEach(function (doc) {
         this.add(doc)
@@ -35,38 +33,53 @@ function search (query) {
       score: result.score
     }, pageIndex[result.ref])
   })
-  .filter(a => a.score > 0.1)
 }
 
 function listenQuery () {
   let searchBox = $('#search-box')
   searchBox.on('input', () => {
-    let query = searchBox.val().toLowerCase()
+    let query = searchBox.val()
     searchResult = search(query)
-    displaySearchResults(searchResult, pageIndex)
+    displaySearchResults(searchResult)
   })
 }
 
-function displaySearchResults (results, pageIndex) {
-  let listItems = results.map(({draft, index, date, uri, title, tags}, key) => {
-    const active = key === 0 ? 'active' : ''
-    const muted = key !== 0 ? 'text-muted' : 'text-light'
-    const badge = key === 0 ? 'badge-light' : 'badge-secondary'
-    const badges = tags.map((word) => `<a href="/tags/${word}" class='badge ${badge}'>${word}</a>`)
+function setClass (n) {
+  if (n !== 0) {
+    return {
+      active: '',
+      text: 'text-muted',
+      badge: 'badge badge-secondary'
+    }
+  }
+
+  return {
+    active: 'active',
+    text: 'text-light',
+    badge: 'badge badge-light'
+  }
+}
+
+function displaySearchResults (results) {
+  let listItems = results.map(({draft, date, uri, title, tags}, n) => {
+    const {active, text, badge} = setClass(n)
+    const badges = tags.map((word) => `<a href="/tags/${word}" class='${badge}'>${word}</a>`)
+
     if (draft) {
       badges.unshift(`<span class="badge badge-danger">draft</span>`)
     }
+
     return `
     <div
-      id='list-${key}'
+      id='list-${n}'
       class="list-group-item list-group-item-action flex-column align-items-start ${active}">
 
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1"><a class="${muted}" href="${uri}">${title}</a></h5>
+        <h5 class="mb-1"><a class="${text}" href="${uri}">${title}</a></h5>
         <small>${date}</small>
       </div>
       <p class='mb-0'>
-        <a class="${muted}" href="${uri}"> ${uri.replace(window.location.origin, '')} </a>
+        <a class="${text}" href="${uri}"> ${uri.replace(window.location.origin, '')} </a>
       </p>
       <small>
         ${badges.join(' ')}

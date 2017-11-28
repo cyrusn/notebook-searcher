@@ -1,0 +1,12 @@
+<div id='{{ index .Params 0 }}'>{{.Inner}}</div>
+
+<script>
+  /* global ABCJS */
+  ABCJS.renderAbc('{{ index .Params 0 }}', '{{.Inner}}', {}, {
+    'responsive': 'resize',
+    'add_classes': true
+  }, {
+    'oneSvgPerLine': true
+  })
+</script>
+
