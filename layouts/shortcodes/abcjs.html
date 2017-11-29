@@ -1,4 +1,13 @@
 <div id='{{ index .Params 0 }}'>{{.Inner}}</div>
+{{ $codeid := (index .Params 0) }}
+
+<button type='button' class='btn btn-sm btn-outline-info' onclick='$("#code-{{$codeid}}").toggle()'>Click to show code</button>
+
+<div id='code-{{ $codeid }}' class="card mb-2" style="display: none;">
+  <div class="card-body bg-light text-dark">
+    <pre>{{.Inner}}</pre>
+  </div>
+</div>
 
 <script>
   /* global ABCJS */
