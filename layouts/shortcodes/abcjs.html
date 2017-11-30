@@ -1,27 +1,5 @@
 {{ $codeid := index .Params 0 }}
 
-<script>
-  /* global $ */
-  function show (nav, id) {
-    $(`#${nav}-${id}`).show()
-    $(`#${nav}-link-${id}`).addClass('active')
-  }
-  function hide (nav, id) {
-    $(`#${nav}-${id}`).hide()
-    $(`#${nav}-link-${id}`).removeClass('active')
-  }
-
-  function select (nav, id) {
-    if (nav === 'score') {
-      show('score', id)
-      hide('code', id)
-    } else if (nav === 'code') {
-      show('code', id)
-      hide('score', id)
-    }
-  }
-
-</script>
 <div class="card mb-5">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
