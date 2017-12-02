@@ -1,0 +1,13 @@
+{{ if .Params.mermaid }}
+<script src='{{"/js/mermaid.min.js" | relURL}}'></script>
+<script>
+  /* global mermaid */
+  const config = {
+    startOnLoad: false,
+    theme: 'dark',
+    logLevel: 3
+  }
+
+  mermaid.initialize(config)
+</script>
+{{ end }}

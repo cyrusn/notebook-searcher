@@ -1,35 +1,47 @@
-{{ $codeid := index .Params 0 }}
+{{ .Page.Scratch.Add "abcjsCount" 1 }}
+{{ $id := .Page.Scratch.Get "abcjsCount" }}
 
-<div class="card mb-5">
+<div class="card mb-5" id="abcjs-{{$id}}" data-children='.item-{{$id}}'>
   <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
+    <ul class="nav card-header-tabs">
       <li class="nav-item">
-        <button id='score-link-{{ $codeid }}' class="btn btn-link nav-link active" onclick="select('score', '{{ $codeid }}')">Score</button>
+        <a class="nav-link active" data-parent="#abcjs-{{$id}}" data-toggle="collapse" href="#abcjs-score-{{$id}}" aria-expanded="false" aria-controls="abcjs-score-{{$id}}">
+          Score
+        </a>
       </li>
       <li class="nav-item">
-        <button id='code-link-{{ $codeid }}' class="btn btn-link nav-link" onclick="select('code', '{{ $codeid }}')">Code</button>
+        <a class="nav-link" data-parent="#abcjs-{{$id}}" data-toggle="collapse" href="#abcjs-code-{{$id}}" aria-expanded="false" aria-controls="abcjs-code={{$id}}">
+          Code
+        </a>
       </li>
     </ul>
   </div>
 
-  <div class='card-img' id='score-{{ $codeid }}'>
-  {{.Inner}}
-  </div>
-
-  <div class="card-body" id='code-{{ $codeid }}' style="display: none;">
-    <div class="card-text">
-      <pre>{{.Inner}}</pre>
+  <div class="item-{{$id}}">
+    <div class="collapse show" id='abcjs-score-{{$id}}' role="tabpanel">
+      <div class="px-md-5 d-block">
+        <div id="abcjs-src-{{$id}}" class="card-img">
+          {{.Inner}}
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="item-{{$id}}">
+    <div class="collapse" id="abcjs-code-{{$id}}" role="tabpanel">
+      <div class="card-body">
+        <pre>{{.Inner}}</pre>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <script>
   /* global ABCJS */
-  ABCJS.renderAbc('score-{{$codeid}}', '{{.Inner}}', {}, {
+  ABCJS.renderAbc('abcjs-src-{{$id}}', '{{.Inner}}', {}, {
     'responsive': 'resize',
     'add_classes': true
   }, {
-    'oneSvgPerLine': true
   })
 </script>

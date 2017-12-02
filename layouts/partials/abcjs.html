@@ -1,25 +1,4 @@
 <!-- ABCJS - music notation -->
 {{ if .Params.abcjs }}
 <script src='{{ "/js/abcjs_basic_latest-min.js" | relURL }}'></script>
-<script>
-  /* global $ */
-  function show (nav, id) {
-    $(`#${nav}-${id}`).show()
-    $(`#${nav}-link-${id}`).addClass('active')
-  }
-  function hide (nav, id) {
-    $(`#${nav}-${id}`).hide()
-    $(`#${nav}-link-${id}`).removeClass('active')
-  }
-
-  function select (nav, id) {
-    if (nav === 'score') {
-      show('score', id)
-      hide('code', id)
-    } else if (nav === 'code') {
-      show('code', id)
-      hide('score', id)
-    }
-  }
-</script>
 {{ end }}

@@ -24,7 +24,6 @@
   <link href='{{ . | relURL }}' rel='icon' type='image/x-icon'/>
 {{- end -}}
 
-
 <!-- Bootstrap -->
 <script src='{{ "/js/jquery-3.2.1.slim.min.js" | relURL }}'></script>
 <script src='{{ "/js/popper.min.js" | relURL }}'></script>
@@ -49,9 +48,7 @@ const navLinks = ['/']
 {{end}}
 
 var Paginator = {}
-
 </script>
 
 <!-- ABCJS - music notation -->
 {{ partial "abcjs.html" . }}
-

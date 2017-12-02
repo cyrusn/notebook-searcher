@@ -1,0 +1,16 @@
+<div class="mermaid" id="id">{{.Inner}}</div>
+
+<script>
+/* global mermaid */
+  const element = document.querySelector('#id')
+
+  const insertSvg = function (svgCode, bindFunctions) {
+    element.innerHTML = svgCode
+    // .replace(/([\s\S]*?)<style>[\s\S]*?<\/style>/g, '$1')
+  }
+
+  mermaid.mermaidAPI.render('id', '{{.Inner}}', insertSvg)
+</script>
+
+
+
