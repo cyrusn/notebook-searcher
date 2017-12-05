@@ -5,7 +5,7 @@
   <!-- RemarkJS (for slide view) -->
   <link rel="stylesheet" href='{{"./css/remark.css"|relURL}}'>
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
-  <script src='{{ "/js/helper.js" | relURL }}'></script>
+
 </head>
 
 <body>
@@ -13,13 +13,12 @@
 {{ .RawContent }}
 </textarea>
 
-
+<script src='{{ "/js/helper.js" | relURL }}'></script>
 <script>
   // parsing for remark option:
   // as config.toml package is case insensitive, therefore key in config.toml
   // will be dash-case, will convert to camalCase and pipe to remark option
   const option = {}
-  console.log({{ .Params.RemarkOption }})
   const obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
 
   for (const key in obj) {
@@ -35,7 +34,7 @@
 </script>
 
 <!-- press q to home -->
-<script type="text/javascript">
+<script>
   document.onkeypress = ({which, keyCode} = window.event) => {
     const charCode = (typeof which === 'number') ? which : keyCode
     if (charCode === 113) {

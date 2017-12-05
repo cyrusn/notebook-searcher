@@ -2,6 +2,7 @@
 {{ $id := .Page.Scratch.Get "abcjsCount" }}
 
 <div class="card mb-5" id="abcjs-{{$id}}" data-children='.item-{{$id}}'>
+
   <div class="card-header">
     <ul class="nav card-header-tabs">
       <li class="nav-item">
@@ -38,7 +39,6 @@
 </div>
 
 <script>
-  // parsing option
   /* global ABCJS */
   const config = {
     'responsive': 'resize',

@@ -1,7 +1,7 @@
 <div class="bg-light d-md-flex justify-content-center">
-    <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand text-center"
-      href="{{ "" | absLangURL }}">
+      href='{{ "" | absLangURL }}'>
       {{ .Site.Author.name }}
     </a>
     <button
@@ -39,7 +39,7 @@
         {{ end }}
       </ul>
     </div>
-    <button type="button" class="d-none d-md-block d-lg-block btn btn-sm align-middle btn-outline-success" data-toggle="modal" data-target="#tipsModal">tips</button>
+    <button type="button" class="d-none d-md-block d-lg-block btn btn-sm align-middle btn-outline-info" data-toggle="modal" data-target="#tipsModal">tips</button>
   </nav>
 </div>
 {{ partial "tips.html" . }}

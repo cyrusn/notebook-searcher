@@ -49,10 +49,10 @@ function navigatee (keyCode, event) {
         }
       })
       break
-    case (keyCode === 78 && hasNext && !onFocus): // n
+    case (keyCode === 76 && hasNext && !onFocus): // l
       window.location.pathname = nextPage
       break
-    case (keyCode === 80 && hasPrev && !onFocus): // p
+    case (keyCode === 72 && hasPrev && !onFocus): // h
       window.location.pathname = prevPage
       break
     case (keyCode === 81 && !onFocus): // q

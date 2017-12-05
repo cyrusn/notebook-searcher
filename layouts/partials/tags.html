@@ -10,12 +10,10 @@
   {{end}}
 </small>
 {{ with .Params.tags }}
-{{if . }}
 <small>
 {{ range . }}
   <a class="badge badge-secondary" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
 {{ end }}
 </small>
-{{end}}
 {{end}}
 
