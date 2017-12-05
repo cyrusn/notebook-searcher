@@ -3,10 +3,10 @@
 <head>
   {{partial "head.html" .}}
 </head>
-<body class="mb-4">
-  {{partial "nav.html" .}}
-  <div class="container mt-4">
-    {{partial "search.html" .}}
+<body>
+  {{ block "header" . }}{{partial "nav.html" .}}{{ end }}
+  <div class="container mt-5 mx-auto mb-4">
+    {{partial "search.html" . }}
   </div>
 </body>
 </html>

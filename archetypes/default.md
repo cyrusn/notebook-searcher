@@ -1,10 +1,11 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
-draft: false
-date: {{ .Date }}
-katex: false
-abcjs: false
 description:
+draft: false
+katex: false
+mermaid: false
+abcjs: false
+date: {{ .Date }}
 tags:
 ---

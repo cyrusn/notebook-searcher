@@ -2,10 +2,18 @@
 <script src='{{"/js/mermaid.min.js" | relURL}}'></script>
 <script>
   /* global mermaid */
-  const config = {
-    startOnLoad: false,
-    theme: 'dark',
-    logLevel: 3
+
+  // parsing option
+  const config = {}
+
+  const defaultConfig = {
+    startOnLoad: true
+  }
+
+  const obj = Object.assign({}, defaultConfig, {{ .Site.Params.mermaidOption }}, {{ .Params.mermaidOption }})
+
+  for (const key in obj) {
+    config[dashToCamelCase(key)] = obj[key]
   }
 
   mermaid.initialize(config)
