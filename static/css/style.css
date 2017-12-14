@@ -13,3 +13,7 @@ body {
 .content {
   min-height: 1200px;
 }
+
+.hljs {
+  font-size: 1rem;
+}

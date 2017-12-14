@@ -2,10 +2,9 @@
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
 description:
-draft: true
-katex: false
-mermaid: false
-abcjs: false
+draft: false
+remarkOption: 
+  ratio: 16:9
 date: {{ .Date }}
 tags:
 ---

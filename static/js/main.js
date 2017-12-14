@@ -10,10 +10,6 @@ $(document).ready(e => {
     .addClass('blockquote ml-5 px-4 py-2 lead text-justify border-secondary')
     .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
-  // Enable HighlightJS
-  $('pre code').each(function (i, block) {
-    hljs.highlightBlock(block)
-  })
 })
 
 function listenKeys () {
