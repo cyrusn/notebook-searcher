@@ -1,64 +1,43 @@
 .remark-slide-content {
-  font-size: 24px;
+  font-size: xx-large;
+  padding: 1em 2.5em !important;
+  font-weight: 300;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif
+.larger {
+  font-size: larger;
 }
 
-
-h1, h2, h3 {
-  font-weight: 450;
-  margin-bottom: 0.5em
+.smaller {
+  font-size: smaller;
 }
 
-img {
-  width: auto;
-  max-height: 480px
+h1 {
+  font-weight: bolder !important;
 }
 
-li {
-  line-height: 1.2em;
-  padding: 0.2em 0
-}
-
-a {
-  color: #0366d6;
-  text-decoration: none;
-  font-weight: 500
-}
-
-a:hover, a:focus {
-  text-decoration: underline
-}
-
-blockquote {
-  border-left: 6px solid grey;
-  padding-left: 1em;
-  margin: 1rem 0em;
-  font-style: italic;
-  color: grey
-}
-
-code {
-  font-family: "Lucida Console", Monaco, monospace;
-  color: #bd4147;
-  background: #f8f9fa;
-  padding: 4px;
-  border-radius: 4px;
-  font-size: 0.9em
+h2 {
+  font-weight: unset !important;
 }
 
 table {
-  width: 100%
+  width: 100%;
 }
 
-table, th, td {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table,
+th,
+td {
   border-bottom: 1px solid silver;
   border-collapse: collapse
 }
 
-th, td {
+th,
+td {
   padding: 0.8rem
 }
 
@@ -67,71 +46,118 @@ thead th {
   font-size: 1.1em
 }
 
-tr td:not(:last-child), tr th:not(:last-child) {
+tr td:not(:last-child),
+tr th:not(:last-child) {
   border-right: 1px solid silver
-}
-
-
-.sidebar {
-  float: left;
-  height: 100%;
-  width: 30%
-}
-
-.sidebar h1 {font-size: 1.8em}
-.sidebar h2 {font-size: 1.6em}
-.sidebar h3 {font-size: 1.4em}
-
-.sidebar {
-  font-size: 1.2em;
-}
-
-.sidebar li {
-    padding: 0.1em;
-    color: silver;
-}
-
-.sidebar li:last-of-type {
-    padding: 0.2em;
-    color: black;
-}
-
-.content {
-  float: right;
-  height: 100%;
-  width: 70%;
-  padding-top: 0.8em;
-}
-
-.red {
-  color: red
-}
-
-.grey {
-  color: grey
-}
-
-.silver {
-  color: silver
-}
-
-.small {
-  font: 0.8rem
-}
-
-.large {
-  font-size: 2em
-}
-
-.bold {
-  font-weight: bold
 }
 
 .footnote {
   position: absolute;
   bottom: 2em;
   left: 8em;
-  font-size: small
+  font-size: small;
+}
+
+.footnote li {
+  list-style: decimal;
+}
+
+.overflow {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.blockquote-primary > blockquote {
+  border-left-color: #007bff;
+}
+
+.blockquote-secondary > blockquote {
+  border-left-color: #6c757d;
+}
+
+.blockquote-success > blockquote {
+  border-left-color: #28a745;
+}
+
+.blockquote-info > blockquote {
+  border-left-color: #17a2b8;
+}
+
+.blockquote-warning > blockquote {
+  border-left-color: #ffc107;
+}
+
+.blockquote-danger > blockquote {
+  border-left-color: #dc3545;
+}
+
+.blockquote-light > blockquote {
+  border-left-color: #f8f9fa;
+}
+
+.blockquote-dark > blockquote {
+  border-left-color: #343a40
+}
+
+blockquote {
+  margin: 2rem 0 !important;
+  border-left: 6px solid #6c757d;
+  border-radius: 0.25rem;
+  padding: 1em 0 1em 2em;
+  margin: 1rem 0em;
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.sidebar-list {
+  border-radius: 0.25rem !important;
+}
+
+.sidebar-list li {
+  font-size: x-large;
+  color: #868e96;
+}
+
+.sidebar-list li:last-of-type {
+  color: inherit;
+  font-style: italic;
+  font-weight: 600 !important;
+}
+
+.row {
+  height: 100%;
+}
+
+.remark-code {
+  border-radius: 0.25rem !important;
+}
+
+.remark-inline-code {
+  padding: 0 !important;
+}
+
+a:link {
+  color: inherit;
+  font-weight: border;
+  font-style: italic;
+}
+
+a:visited,
+a:active,
+a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  font-weight: bolder !important;
 }
 
 .sup {
@@ -139,31 +165,14 @@ tr td:not(:last-child), tr th:not(:last-child) {
   font-size: small
 }
 
-.footnote li {
-  list-style: decimal
+/* To ensure all scroll bar will show up by default */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
 }
 
-.inverse {
-  background: #272822;
-  color: white;
-  text-shadow: 0 0 20px #333
-}
-
-.column ul,
-.column ol,
-.column dl {
-  list-style-position: inside;
-  padding: 0;
-}
-
-.column {
-  float: left;
-  width: 50%;
-  height: 100%
-}
-
-.column:nth-of-type(2) {
-  float: right;
-  width: 50%;
-  height: 100%
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }

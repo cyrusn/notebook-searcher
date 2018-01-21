@@ -5,13 +5,15 @@
   <!-- RemarkJS (for slide view) -->
   <link rel="stylesheet" href='{{"./css/remark.css"|relURL}}'>
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
+  <link rel="stylesheet" type="text/css" href='{{ "/css/bootstrap.min.css" | relURL }}'>
+
 
 </head>
 
-<body>
-<textarea id="source">
+<body class="text-dark">
+<div id="source">
 {{ .RawContent }}
-</textarea>
+</div>
 
 <script src='{{ "/js/helper.js" | relURL }}'></script>
 <script>
@@ -41,6 +43,7 @@
       window.location.href = '/'
     }
   }
+  document.getElementsByTagName('a').map(a => a.setAttribute('target', '_blank'))
 </script>
 </body>
 </html>

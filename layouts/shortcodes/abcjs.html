@@ -40,11 +40,10 @@
 
 <script>
   /* global ABCJS */
-  const config = {
+
+  ABCJS.renderAbc('abcjs-src-{{$id}}', '{{.Inner}}', {}, {
     'responsive': 'resize',
     'add_classes': true
-  }
-
-  ABCJS.renderAbc('abcjs-src-{{$id}}', '{{.Inner}}', {}, config, {
+  }, {
   })
 </script>

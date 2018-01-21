@@ -10,6 +10,7 @@ function initLunr (cb) {
       this.ref('index')
       this.field('title')
       this.field('tags')
+      this.field('filename')
 
       pageIndex.forEach(function (doc) {
         this.add(doc)

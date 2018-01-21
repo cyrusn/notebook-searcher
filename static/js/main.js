@@ -1,4 +1,4 @@
-/* global $ hljs window Paginator navLinks pageKind */
+/* global $ window Paginator navLinks pageKind */
 $(document).ready(e => {
   listenKeys()
 

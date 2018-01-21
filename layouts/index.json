@@ -6,6 +6,7 @@
   "kind": "{{ $page.Kind }}",
   "type": "{{ $page.Type }}",
   "uri": "{{ $page.Permalink }}",
+  "filename": "{{ $page.File.BaseFileName }}",
   "draft": {{$page.Draft}},
   "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
   "title": "{{ htmlEscape $page.Title }}",
