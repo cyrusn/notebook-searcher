@@ -3,11 +3,12 @@ $(document).ready(e => {
   listenKeys()
 
   $('img').addClass('img-fluid')
+  $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')
   $('th, td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
   $('blockquote')
-    .addClass('blockquote ml-5 px-4 py-2 lead text-justify border-secondary')
+    .addClass('blockquote ml-5 px-4 py-2 lead border-info bg-light ')
     .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
 })
@@ -15,11 +16,11 @@ $(document).ready(e => {
 function listenKeys () {
   $(document).on('keydown', event => {
     const {keyCode, which} = event
-    navigatee(keyCode || which, event)
+    navigate(keyCode || which, event)
   })
 }
 
-function navigatee (keyCode, event) {
+function navigate (keyCode, event) {
   // console.log(keyCode)
   let $active = $('div.active')
   let $list = $('.list-group-item')

@@ -1,19 +1,16 @@
 html {
-  font-size: 1.1rem;
+  font-size: large
 }
 
 body {
-  width: 100%;
+  width: 100%
 }
 
 .container {
-  max-width: 60rem
+  max-width: 50rem
 }
 
-.content {
-  min-height: 1200px;
-}
-
-.hljs {
-  font-size: 1rem;
+h1, h2, h3 {
+  padding-top: 1.5rem;
+  font-weight: 550
 }

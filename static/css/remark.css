@@ -1,5 +1,5 @@
 .remark-slide-content {
-  font-size: xx-large;
+  font-size: x-large;
   padding: 1em 2.5em !important;
   font-weight: 300;
 }
@@ -116,16 +116,16 @@ blockquote p {
   width: fit-content;
 }
 
-.sidebar-list {
+.sidebar {
   border-radius: 0.25rem !important;
 }
 
-.sidebar-list li {
+.sidebar li {
   font-size: x-large;
   color: #868e96;
 }
 
-.sidebar-list li:last-of-type {
+.sidebar li:last-of-type {
   color: inherit;
   font-style: italic;
   font-weight: 600 !important;
@@ -137,6 +137,7 @@ blockquote p {
 
 .remark-code {
   border-radius: 0.25rem !important;
+  font-size: smaller;
 }
 
 .remark-inline-code {
@@ -147,13 +148,14 @@ a:link {
   color: inherit;
   font-weight: border;
   font-style: italic;
+  text-decoration: underline;
 }
 
 a:visited,
 a:active,
 a:hover {
   color: inherit !important;
-  text-decoration: none !important;
+  text-decoration: underline; !important;
 }
 
 a:hover {
