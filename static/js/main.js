@@ -8,7 +8,7 @@ $(document).ready(e => {
   $('th, td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
   $('blockquote')
-    .addClass('blockquote ml-5 px-4 py-2 lead border-info bg-light ')
+    .addClass('blockquote ml-5 px-4 py-2 my-3 lead border-info bg-light ')
     .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
 })

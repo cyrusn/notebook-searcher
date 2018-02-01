@@ -12,5 +12,10 @@ body {
 
 h1, h2, h3 {
   padding-top: 1.5rem;
-  font-weight: 550
+  font-weight: 550;
+  /*margin: 1rem 0;*/
+}
+
+blockquote p {
+  margin: 0.8rem;
 }
