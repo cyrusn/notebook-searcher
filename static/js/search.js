@@ -1,25 +1,26 @@
 /* global $ fetch lunr */
+
 var pageIndex, lunrIndex, searchResult
 
 function initLunr (cb) {
   fetch('/index.json')
-  .then(response => response.json())
-  .then(data => {
-    pageIndex = data
-    lunrIndex = lunr(function () {
-      this.ref('index')
-      this.field('title')
-      this.field('tags')
-      this.field('filename')
+    .then(response => response.json())
+    .then(data => {
+      pageIndex = data
+      lunrIndex = lunr(function () {
+        this.ref('index')
+        this.field('title')
+        this.field('tags')
+        this.field('filename')
 
-      pageIndex.forEach(function (doc) {
-        this.add(doc)
-      }, this)
+        pageIndex.forEach(function (doc) {
+          this.add(doc)
+        }, this)
 
-      this.pipeline.remove(this.stemmer)
+        this.pipeline.remove(this.stemmer)
+      })
     })
-  })
-  .then(cb)
+    .then(cb)
 }
 
 initLunr(() => {
@@ -29,11 +30,11 @@ initLunr(() => {
 
 function search (query) {
   return lunrIndex.search(query)
-  .map(result => {
-    return Object.assign({
-      score: result.score
-    }, pageIndex[result.ref])
-  })
+    .map(result => {
+      return Object.assign({
+        score: result.score
+      }, pageIndex[result.ref])
+    })
 }
 
 function listenQuery () {

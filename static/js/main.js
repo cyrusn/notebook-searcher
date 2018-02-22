@@ -2,13 +2,16 @@
 $(document).ready(e => {
   listenKeys()
 
+  $('[data-toggle="tooltip"]').tooltip({
+    html: true
+  })
   $('img').addClass('img-fluid')
   $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')
   $('th, td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
   $('blockquote')
-    .addClass('blockquote ml-5 px-4 py-2 my-3 lead border-info bg-light ')
+    .addClass('blockquote px-4 py-3 mt-2 mb-4 lead border-info bg-light rounded')
     .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
 })

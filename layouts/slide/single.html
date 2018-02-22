@@ -16,12 +16,14 @@
 </div>
 
 <script src='{{ "/js/helper.js" | relURL }}'></script>
+{{ if .Params.katex }}
+{{ partial "katex.html" . }}
+{{ end }}
 <script>
   // parsing for remark option:
   // as config.toml package is case insensitive, therefore key in config.toml
   // will be dash-case, will convert to camalCase and pipe to remark option
   const option = {}
-  console.log({{.Params.RemarkOption}})
   const obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
 
   for (const key in obj) {
@@ -29,7 +31,6 @@
   }
 
   {{ if .Params.katex }}
-  {{ partial "katex.html" . }}
   const slideshow = remark.create(option, renderMath)
   {{ else }}
   const slideshow = remark.create(option)

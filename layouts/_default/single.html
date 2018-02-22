@@ -1,24 +1,35 @@
 {{ define "main" }}
-<h1 class="display-4 text-center">{{ .Title }}</h1>
-<hr>
 <div class="mx-auto">
+  <!-- title -->
+  <h1 class="display-4 pb-0">{{ .Title }}</h1>
   {{ with .Params.subtitle }}
-  {{if .}}<h3 class="text-muted">{{ . }}</h3>{{end}}
+
+  <!-- subtitle -->
+  {{if .}}<h2 class="text-muted pt-0">{{ . }}</h2>{{end}}
   {{end}}
-  {{ if ne .Type "page" }}
-  <p class="text-muted font-weight-bold">Created on {{ dateFormat .Site.Params.dateFormat .Date }}</p>
-  {{ end }}
+
+  <!-- description -->
   {{with .Params.description}}
-  {{if . }}
-  <p class="mb-0 font-italic lead">
-    {{ . }}
-  </p>
+    {{if . }}
+    <blockquote class="mb-0 font-italic lead">
+      {{ . }}
+    </blockquote>
+    {{end}}
   {{end}}
-  {{end}}
+
+  <!-- tags -->
   <p>
     {{ partial "tags.html" . }}
   </p>
-  <hr>
+
+  <!-- date created -->
+  {{ if ne .Type "page" }}
+  <small class="text-muted font-weight-bold">Created on {{ dateFormat .Site.Params.dateFormat .Date }}</small>
+  {{ end }}
+
+</div>
+<hr>
+<div class="mx-auto">
   <div id="content">
     {{ .Content }}
   </div>

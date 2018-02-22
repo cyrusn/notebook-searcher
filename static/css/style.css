@@ -13,9 +13,23 @@ body {
 h1, h2, h3 {
   padding-top: 1.5rem;
   font-weight: 550;
-  /*margin: 1rem 0;*/
 }
 
-blockquote p {
-  margin: 0.8rem;
+.ipa {
+  padding: .2rem .4rem;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+  letter-spacing: 1px;
+}
+
+blockquote {
+  font-size: 1.1rem !important;
+}
+
+blockquote > p {
+  margin: 0 auto;
+}
+
+blockquote > footer {
+  margin-top: 1rem;
 }
