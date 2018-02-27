@@ -5,15 +5,20 @@ $(document).ready(e => {
   $('[data-toggle="tooltip"]').tooltip({
     html: true
   })
-  $('img').addClass('img-fluid')
+  $('h1').addClass('display-4 pb-0')
+  $('h2').addClass('pt-0')
+  $('img').addClass('img-fluid img-thumbnail')
   $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')
-  $('th, td').addClass('p-2')
+  $('th td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
   $('blockquote')
-    .addClass('blockquote px-4 py-3 mt-2 mb-4 lead border-info bg-light rounded')
+    .addClass('blockquote pl-4 pr-2 py-2 my-3 lead border-info bg-light rounded')
     .css('border-left', '6px solid')
   $('blockquote footer').addClass('blockquote-footer text-right')
+  $('iframe')
+    .addClass('img-thumbnail')
+    .parent('div').addClass('mb-4')
 })
 
 function listenKeys () {
@@ -49,16 +54,16 @@ function navigate (keyCode, event) {
         }
       })
       break
-    case (keyCode === 76 && hasNext && !onFocus): // l
+    case ((keyCode === 76 || keyCode === 39) && hasNext && !onFocus): // l
       window.location.pathname = nextPage
       break
-    case (keyCode === 72 && hasPrev && !onFocus): // h
+    case ((keyCode === 72 || keyCode === 37) && hasPrev && !onFocus): // h
       window.location.pathname = prevPage
       break
     case (keyCode === 81 && !onFocus): // q
       window.location.href = '/'
       break
-    case (keyCode === 74 && !onFocus): // j
+    case ((keyCode === 74 || keyCode === 40) && !onFocus): // j
       if (pageKind === 'page') {
         scrollPage('down', 80)
       } else {
@@ -73,7 +78,7 @@ function navigate (keyCode, event) {
         scrollActiveListToCenter()
       }
       break
-    case (keyCode === 75 && !onFocus): // k
+    case ((keyCode === 75 || keyCode === 38) && !onFocus): // k
       if (pageKind === 'page') {
         scrollPage('up', 80)
       } else {

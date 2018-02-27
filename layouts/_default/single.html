@@ -1,17 +1,17 @@
 {{ define "main" }}
 <div class="mx-auto">
   <!-- title -->
-  <h1 class="display-4 pb-0">{{ .Title }}</h1>
+  <h1>{{ .Title }}</h1>
   {{ with .Params.subtitle }}
 
   <!-- subtitle -->
-  {{if .}}<h2 class="text-muted pt-0">{{ . }}</h2>{{end}}
+  {{if .}}<h2 class="text-muted font-weight-bold">{{ . }}</h2>{{end}}
   {{end}}
 
   <!-- description -->
   {{with .Params.description}}
     {{if . }}
-    <blockquote class="mb-0 font-italic lead">
+    <blockquote class="mb-0 lead">
       {{ . }}
     </blockquote>
     {{end}}
@@ -20,12 +20,15 @@
   <!-- tags -->
   <p>
     {{ partial "tags.html" . }}
+    {{ if ne .Type "page" }}
+    <!-- date created -->
+     <br>
+      <small>
+        <span class="badge badge-info">Created on {{dateFormat .Site.Params.dateFormat .Date }}</span>
+        <span class="badge badge-info">Last Modified {{dateFormat .Site.Params.dateFormat .Page.Lastmod}}</span>
+      </small>
+    {{ end }}
   </p>
-
-  <!-- date created -->
-  {{ if ne .Type "page" }}
-  <small class="text-muted font-weight-bold">Created on {{ dateFormat .Site.Params.dateFormat .Date }}</small>
-  {{ end }}
 
 </div>
 <hr>

@@ -9,6 +9,7 @@
   "filename": "{{ $page.File.BaseFileName }}",
   "draft": {{$page.Draft}},
   "date": "{{ dateFormat .Site.Params.dateFormat $page.Date}}",
+  "lastmod": "{{ dateFormat .Site.Params.dateFormat $page.Lastmod}}",
   "title": "{{ htmlEscape $page.Title }}",
   "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ lower (htmlEscape $tag) }}"{{ end }}]
 }

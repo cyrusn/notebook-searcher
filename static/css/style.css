@@ -1,18 +1,17 @@
 html {
-  font-size: large
+  font-size: large;
 }
 
 body {
-  width: 100%
+  width: 100%;
 }
 
 .container {
-  max-width: 50rem
+  max-width: 50rem;
 }
 
 h1, h2, h3 {
   padding-top: 1.5rem;
-  font-weight: 550;
 }
 
 .ipa {

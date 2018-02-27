@@ -1,6 +1,6 @@
 /* global $ fetch lunr */
 
-var pageIndex, lunrIndex, searchResult
+var pageIndex, lunrIndex
 
 function initLunr (cb) {
   fetch('/index.json')
@@ -24,9 +24,14 @@ function initLunr (cb) {
 }
 
 initLunr(() => {
-  $('#search-box').focus()
   $(document).ready(listenQuery)
 })
+
+function listenQuery () {
+  $('#search-box')
+    .on('input focus', searchAndDisplayResults)
+    .focus()
+}
 
 function search (query) {
   return lunrIndex.search(query)
@@ -37,13 +42,9 @@ function search (query) {
     })
 }
 
-function listenQuery () {
-  let searchBox = $('#search-box')
-  searchBox.on('input', () => {
-    let query = searchBox.val()
-    searchResult = search(query)
-    displaySearchResults(searchResult)
-  })
+function searchAndDisplayResults (event) {
+  const searchResult = search(event.target.value)
+  displaySearchResults(searchResult)
 }
 
 function setClass (n) {
@@ -63,7 +64,7 @@ function setClass (n) {
 }
 
 function displaySearchResults (results) {
-  let listItems = results.map(({draft, date, uri, title, tags}, n) => {
+  let listItems = results.map(({draft, lastmod, uri, title, tags}, n) => {
     const {active, text, badge} = setClass(n)
     const badges = tags.map((word) => `<a href="/tags/${word}" class='${badge}'>${word}</a>`)
 
@@ -78,7 +79,7 @@ function displaySearchResults (results) {
 
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1"><a class="${text}" href="${uri}">${title}</a></h5>
-        <small>${date}</small>
+        <small>${lastmod}</small>
       </div>
       <p class='mb-0'>
         <a class="${text}" href="${uri}"> ${uri.replace(window.location.origin, '')} </a>
