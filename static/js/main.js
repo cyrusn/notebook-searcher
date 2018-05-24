@@ -5,8 +5,7 @@ $(document).ready(e => {
   $('[data-toggle="tooltip"]').tooltip({
     html: true
   })
-  $('h1').addClass('display-4 pb-0')
-  $('h2').addClass('pt-0')
+  $('.title').addClass('display-3 pb-0')
   $('img').addClass('img-fluid img-thumbnail')
   $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')

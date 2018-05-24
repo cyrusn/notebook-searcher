@@ -1,4 +1,4 @@
-<!-- mermaid.js should be placed in footer -->
+<!-- mermaid.js should be placed in footer slideshow -->
 {{ if .Params.mermaid }}
 <script src='{{"/js/mermaid.min.js" | relURL}}'></script>
 <script>
@@ -8,7 +8,7 @@
   const config = {}
 
   const defaultConfig = {
-    startOnLoad: true
+    startOnLoad: false
   }
 
   const obj = Object.assign({}, defaultConfig, {{ .Site.Params.mermaidOption }}, {{ .Params.mermaidOption }})
@@ -18,5 +18,20 @@
   }
 
   mermaid.initialize(config)
+
+  {{if eq .Page.Type "slide" }}
+    function initMermaid() {
+      // only render mermaid diagram when the slide is loaded
+      const graphs = $('.remark-visible').find('.mermaid')
+      const haveGraphOnCurrentPage = (graphs.length !== 0)
+      if (haveGraphOnCurrentPage) {
+        mermaid.init(undefined, $(graphs))
+      }
+    }
+    slideshow.on('afterShowSlide', initMermaid)
+
+  {{else}}
+    mermaid.init()
+  {{end}}
 </script>
 {{ end }}

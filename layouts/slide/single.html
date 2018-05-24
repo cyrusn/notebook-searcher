@@ -5,8 +5,12 @@
   <!-- RemarkJS (for slide view) -->
   <link rel="stylesheet" href='{{"./css/remark.css"|relURL}}'>
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
-  <link rel="stylesheet" type="text/css" href='{{ "/css/bootstrap.min.css" | relURL }}'>
+  <!-- Bootstrap -->
+  {{ partial "bootstrap.html" .}}
 
+  <script src='{{ "/js/helper.js" | relURL }}'></script>
+  <!-- font-awesome -->
+  {{ partial "fontawesome.html" .}}
 
 </head>
 
@@ -15,19 +19,19 @@
 {{ .RawContent }}
 </div>
 
-<script src='{{ "/js/helper.js" | relURL }}'></script>
 {{ if .Params.katex }}
 {{ partial "katex.html" . }}
 {{ end }}
+
 <script>
   // parsing for remark option:
   // as config.toml package is case insensitive, therefore key in config.toml
   // will be dash-case, will convert to camalCase and pipe to remark option
   const option = {}
-  const obj = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
+  const remarkOption = Object.assign({}, {{ .Site.Params.RemarkOption }}, {{ .Params.RemarkOption }})
 
-  for (const key in obj) {
-    option[dashToCamelCase(key)] = obj[key]
+  for (const key in remarkOption) {
+    option[dashToCamelCase(key)] = remarkOption[key]
   }
 
   {{ if .Params.katex }}
@@ -37,6 +41,9 @@
   {{ end }}
 </script>
 
+<!-- mermaid - graph generator -->
+{{ partial "mermaid.html" . }}
+
 <!-- press q to home -->
 <script>
   document.onkeypress = ({which, keyCode} = window.event) => {
@@ -45,7 +52,13 @@
       window.location.href = '/'
     }
   }
+
   document.getElementsByTagName('a').map(a => a.setAttribute('target', '_blank'))
+
+  $("a:not(a:has(img))").prepend('<i class="fas fa-link fa-xs"></i><span>&nbsp;</span>');
+
 </script>
+
 </body>
+
 </html>
