@@ -5,7 +5,12 @@ $(document).ready(e => {
   $('[data-toggle="tooltip"]').tooltip({
     html: true
   })
-  $('.title').addClass('display-3 pb-0')
+
+  $('#TableOfContents nav').addClass('navbar navbar-light')
+  $('#TableOfContents ul').addClass('nav flex-column nav-pills')
+  $('#TableOfContents li').addClass('nav-link')
+  $('#TableOfContents a').addClass('nav-link text-muted')
+
   $('img').addClass('img-fluid img-thumbnail')
   $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')

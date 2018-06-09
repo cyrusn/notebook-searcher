@@ -53,10 +53,12 @@
     }
   }
 
+
   document.getElementsByTagName('a').map(a => a.setAttribute('target', '_blank'))
 
-  $("a:not(a:has(img))").prepend('<i class="fas fa-link fa-xs"></i><span>&nbsp;</span>');
-
+  $('a:not(a:has(img))').prepend(
+    '<i class="fas fa-link fa-xs"></i><span>&nbsp;</span>'
+  )
 </script>
 
 </body>

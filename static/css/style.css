@@ -1,13 +1,25 @@
 html {
-  font-size: large;
+  font-size: medium;
 }
 
 body {
   width: 100%;
+  position: relative;
 }
 
-.container {
-  max-width: 50rem;
+#TableOfContents .nav-link {
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
+}
+
+#TableOfContents .nav-link > .nav-link {
+  padding: 0rem;
+}
+
+#TableOfContents .active {
+  background-color: inherit !important;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 h1, h2, h3 {
