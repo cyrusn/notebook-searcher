@@ -1,6 +1,10 @@
 {{ define "main" }}
 <div class="mx-auto row">
+  {{ if .Params.toc }}
   <div class="col-9">
+  {{else}}
+  <div class="mx-md-5 px-md-5">
+  {{end}}
 
     <!-- title -->
     <h1 class="display-3 pb-0">{{ .Title }}</h1>
@@ -36,9 +40,11 @@
         {{ .Content }}
     </div>
   </div>
-  <aside class="col-3 sticky-top h-100">
+  {{ if .Params.toc }}
+  <div class="col-3 sticky-top h-100 py-2" id='toc'>
       {{.TableOfContents}}
-  </aside>
+  </div>
+  {{end}}
 </div>
 {{ if .Site.DisqusShortname }}
 <hr>

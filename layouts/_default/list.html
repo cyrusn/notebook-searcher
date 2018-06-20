@@ -8,7 +8,7 @@
       {{ range $index, $el := (sort .Paginator.Pages ".Lastmod" "desc")}}
       <div
       id='list-{{$index}}'
-      class="list-group-item list-group-item-action list-group-item-light {{if eq $index 0}}active{{end}}">
+      class="list-group-item list-group-item-light {{if eq $index 0}}active{{end}}">
       <div class="d-flex w-100 justify-content-between">
         <h6 class="mb-1">
           <a class="{{if eq $index 0}}text-light{{else}}text-muted{{end}}" href="{{ $el.Permalink | relURL }}">{{ $el.Title }}</a>

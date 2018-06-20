@@ -3,7 +3,11 @@
 <head>
   {{partial "head.html" .}}
 </head>
-<body data-spy="scroll" data-target="#TableOfContents" data-offset="10">
+  {{ if .Params.toc }}
+  <body data-spy="scroll" data-target="#TableOfContents">
+  {{else}}
+  <body>
+  {{end}}
   {{ block "header" . }}{{partial "nav.html" .}}{{ end }}
   <div class="container mt-2 mx-auto mb-4 text-dark">
     {{ block "main" . }}{{partial "search.html" . }}{{ end }}

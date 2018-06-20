@@ -7,19 +7,18 @@ body {
   position: relative;
 }
 
-#TableOfContents .nav-link {
-  padding: 0.2rem 0.2rem 0.2rem 1rem;
-}
-
-#TableOfContents .nav-link > .nav-link {
-  padding: 0rem;
+#TableOfContents {
+  font-size: smaller;
+  overflow-y: hidden;
+  max-height: 95vh;
 }
 
 #TableOfContents .active {
-  background-color: inherit !important;
-  font-weight: bold;
   font-style: italic;
-  text-decoration: underline;
+  font-weight: bold;
+  border-left: 3px solid;
+  border-radius: 1px;
+  background-color: inherit !important;
 }
 
 h1, h2, h3 {
