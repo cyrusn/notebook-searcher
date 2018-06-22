@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="mx-auto row">
   {{ if .Params.toc }}
-  <div class="col-9">
+  <div class="col-lg-10 col-12">
   {{else}}
-  <div class="mx-md-5 px-md-5">
+  <!-- <div class="mx-md-5 px-md-5"> -->
+  <div>
   {{end}}
-
     <!-- title -->
     <h1 class="display-3 pb-0">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
@@ -41,7 +41,7 @@
     </div>
   </div>
   {{ if .Params.toc }}
-  <div class="col-3 sticky-top h-100 py-2" id='toc'>
+  <div class="d-none col-lg-2 d-lg-block sticky-top h-100 py-2 border-left px-0">
       {{.TableOfContents}}
   </div>
   {{end}}

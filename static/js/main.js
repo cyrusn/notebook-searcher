@@ -6,10 +6,9 @@ $(document).ready(e => {
     html: true
   })
 
-  $('#toc').addClass('border-left')
   $('#TableOfContents ul').addClass('nav flex-column nav-pills')
-  $('#TableOfContents li').addClass('nav-link pt-2 pb-0')
-  $('#TableOfContents a').addClass('nav-link py-0 text-muted border-danger')
+  $('#TableOfContents li').addClass('nav-link pt-2 pb-0 pr-0')
+  $('#TableOfContents a').addClass('nav-link py-0 px-2 text-muted border-danger')
 
   // scroll overflowed toc to 1/3 of window height
   $(window).on('activate.bs.scrollspy', function () {
