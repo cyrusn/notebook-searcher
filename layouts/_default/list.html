@@ -2,8 +2,8 @@
 <h1 class="text-center display-4">{{ .Title }}</h1>
 <hr>
 <div class="mx-md-5 px-md-5">
-  <div>
     {{ partial "pagination.html" . }}
+  <div>
     <div class="list-group mx-auto w-75">
       {{ range $index, $el := (sort .Paginator.Pages ".Lastmod" "desc")}}
       <div

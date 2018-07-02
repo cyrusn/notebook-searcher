@@ -1,17 +1,18 @@
 {{ define "main" }}
 <div class="mx-auto row">
   {{ if .Params.toc }}
-  <div class="col-lg-10 col-12">
+  <div class="col-xl-10 col-12">
   {{else}}
   <!-- <div class="mx-md-5 px-md-5"> -->
   <div>
   {{end}}
     <!-- title -->
-    <h1 class="display-3 pb-0">{{ .Title }}</h1>
+
+    <h1 class="display-4">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
 
     <!-- subtitle -->
-    {{if .}}<h2 class="text-muted font-weight-bold">{{ . }}</h2>{{end}}
+    {{if .}}<h2 class="text-muted font-weight-bold pt-0">{{ . }}</h2>{{end}}
     {{end}}
 
     <!-- description -->
@@ -41,7 +42,7 @@
     </div>
   </div>
   {{ if .Params.toc }}
-  <div class="d-none col-lg-2 d-lg-block sticky-top h-100 py-2 border-left px-0">
+  <div class="d-none col-xl-2 d-xl-block sticky-top h-100 py-2 border-left px-0">
       {{.TableOfContents}}
   </div>
   {{end}}

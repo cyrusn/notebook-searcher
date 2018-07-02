@@ -10,7 +10,7 @@ body {
 #TableOfContents {
   font-size: smaller;
   overflow-y: hidden;
-  max-height: 95vh;
+  height: 100vh;
 }
 
 #TableOfContents .active {
@@ -21,16 +21,22 @@ body {
   background-color: inherit !important;
 }
 
-h1, h2, h3 {
-  padding-top: 1.5rem;
+h1 {
+  margin-top: 2.5rem;
+  font-weight: bold;
 }
 
-.ipa {
-  padding: .2rem .4rem;
-  background-color: #f8f9fa;
-  border-radius: .25rem;
-  letter-spacing: 1px;
+h2, h3 {
+  margin-top: 1.5rem;
+  font-weight: 550;
 }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
+h4 { font-size: 1.12rem; }
+h5 { font-size: 1.07rem; }
+h6 { font-size: 1.02rem; }
 
 blockquote {
   font-size: 1.1rem !important;
@@ -42,4 +48,10 @@ blockquote > p {
 
 blockquote > footer {
   margin-top: 1rem;
+}
+
+code {
+    padding: .2rem .4rem;
+    background-color: #f8f9fa;
+    border-radius: .2rem;
 }

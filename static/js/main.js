@@ -10,18 +10,12 @@ $(document).ready(e => {
   $('#TableOfContents li').addClass('nav-link pt-2 pb-0 pr-0')
   $('#TableOfContents a').addClass('nav-link py-0 px-2 text-muted border-danger')
 
-  // scroll overflowed toc to 1/3 of window height
-  $(window).on('activate.bs.scrollspy', function () {
-    let x = $('li > a.active').last().position()
-    let h = $(window).height()
-    $('#TableOfContents').scrollTop(x.top - h / 3)
-  })
-
   $('img').addClass('img-fluid img-thumbnail')
   $('pre').addClass('rounded')
   $('table').addClass('table table-hover table-sm table-bordered')
   $('th td').addClass('p-2')
   $('thead').addClass('thead-dark text-center')
+  $('blockquote h1').addClass('text-info')
   $('blockquote')
     .addClass('blockquote pl-4 pr-2 py-2 my-3 lead border-info bg-light rounded')
     .css('border-left', '6px solid')
@@ -29,6 +23,13 @@ $(document).ready(e => {
   $('iframe')
     .addClass('img-thumbnail')
     .parent('div').addClass('mb-4')
+
+  // scroll overflowed toc to 1/3 of window height
+  $(window).on('activate.bs.scrollspy', function () {
+    let pos = $('li > a.active').last().position()
+    let h = $(window).height()
+    $('#TableOfContents').scrollTop(pos.top - h / 3)
+  })
 })
 
 function listenKeys () {
@@ -48,7 +49,7 @@ function navigate (keyCode, event) {
   const {hasNext, hasPrev, nextPage, prevPage} = Paginator
 
   switch (true) {
-    case (keyCode === 221 && !onFocus): // ]
+    case (keyCode === keycodes(']') && !onFocus): // ]
       navLinks.forEach((link, key, array) => {
         if (link === window.location.pathname) {
           const index = (key + 1) % navLinks.length
@@ -56,7 +57,7 @@ function navigate (keyCode, event) {
         }
       })
       break
-    case (keyCode === 219 && !onFocus): // [
+    case (keyCode === keycodes('[') && !onFocus):
       navLinks.forEach((link, key, array) => {
         if (link === window.location.pathname) {
           const index = (key + navLinks.length - 1) % navLinks.length
@@ -64,16 +65,16 @@ function navigate (keyCode, event) {
         }
       })
       break
-    case ((keyCode === 76 || keyCode === 39) && hasNext && !onFocus): // l
+    case ((keyCode === keycodes('l')) && hasNext && !onFocus):
       window.location.pathname = nextPage
       break
-    case ((keyCode === 72 || keyCode === 37) && hasPrev && !onFocus): // h
+    case ((keyCode === keycodes('h')) && hasPrev && !onFocus):
       window.location.pathname = prevPage
       break
-    case (keyCode === 81 && !onFocus): // q
+    case (keyCode === keycodes('q') && !onFocus):
       window.location.href = '/'
       break
-    case ((keyCode === 74 || keyCode === 40) && !onFocus): // j
+    case ((keyCode === keycodes('j')) && !onFocus):
       if (pageKind === 'page') {
         scrollPage('down', 80)
       } else {
@@ -88,7 +89,7 @@ function navigate (keyCode, event) {
         scrollActiveListToCenter()
       }
       break
-    case ((keyCode === 75 || keyCode === 38) && !onFocus): // k
+    case ((keyCode === keycodes('k')) && !onFocus):
       if (pageKind === 'page') {
         scrollPage('up', 80)
       } else {
@@ -103,20 +104,20 @@ function navigate (keyCode, event) {
         scrollActiveListToCenter()
       }
       break
-    case (keyCode === 32 && !onFocus): // "space"
+    case (keyCode === keycodes('space') && !onFocus):
       event.preventDefault()
       if (isDisabled) {
         searchBox.prop('disabled', false)
         searchBox.focus()
       }
       break
-    case (keyCode === 13 && !onFocus): // enter
+    case (keyCode === keycodes('enter') && !onFocus):
       const link = $('.list-group-item.active a').attr('href')
       if (link) {
         window.location.href = link
       }
       break
-    case (keyCode === 13): // enter
+    case (keyCode === keycodes('enter')): // enter
       event.preventDefault()
       if (!isDisabled) {
         searchBox.prop('disabled', true)

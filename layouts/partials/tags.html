@@ -12,7 +12,7 @@
 {{ with .Params.tags }}
 <small>
 {{ range . }}
-  <a class="badge badge-secondary" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
+  <a class="badge badge-warning" href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>
 {{ end }}
 </small>
 {{end}}
