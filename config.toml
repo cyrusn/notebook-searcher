@@ -1,0 +1,10 @@
+[Params.mermaidOption]
+  theme = "neutral"
+
+[Params.RemarkOption]
+  highlight-lines = true
+  highlight-style = "atom-one-dark"
+  ratio = "4:3"
+  [Params.RemarkOption.navigation]
+      scroll = false
+      # click = true
