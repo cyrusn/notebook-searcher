@@ -43,6 +43,8 @@ function search (query) {
 }
 
 function searchAndDisplayResults (event) {
+  // do nothing if no input in search field
+  if (!event.target.value) return
   const searchResult = search(event.target.value)
   displaySearchResults(searchResult)
 }
@@ -52,7 +54,7 @@ function setClass (n) {
     return {
       active: '',
       text: 'text-muted',
-      badge: 'badge badge-secondary'
+      badge: 'badge badge-info'
     }
   }
 
@@ -75,7 +77,7 @@ function displaySearchResults (results) {
     return `
     <div
       id='list-${n}'
-      class="list-group-item list-group-item-action flex-column align-items-start ${active}">
+      class="list-style list-group-item list-group-item-action flex-column align-items-start ${active}">
 
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1"><a class="${text}" href="${uri}">${title}</a></h5>

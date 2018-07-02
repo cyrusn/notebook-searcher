@@ -1,7 +1,6 @@
 /* global $ window Paginator navLinks pageKind */
 $(document).ready(e => {
   listenKeys()
-
   $('[data-toggle="tooltip"]').tooltip({
     html: true
   })
@@ -140,15 +139,15 @@ function toggleActive (el) {
   el.toggleClass('active')
 
   const arr = [{
-    from: '.text-muted, .text-light',
-    to: 'text-muted text-light'
+    target: '.text-muted, .text-light',
+    clazz: 'text-muted text-light'
   }, {
-    from: '.badge-secondary, .badge-light',
-    to: 'badge-secondary badge-light'
+    target: '.badge-info, .badge-light',
+    clazz: 'badge-info badge-light'
   }]
 
-  arr.forEach(({from, to}) => {
-    el.find(from).toggleClass(to)
+  arr.forEach(({target, clazz}) => {
+    el.find(target).toggleClass(clazz)
   })
 }
 
