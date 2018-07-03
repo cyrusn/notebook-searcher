@@ -1,7 +1,6 @@
 {{ define "main" }}
 <div class="mx-auto row">
-
-  {{if ne .File.BaseFileName "about"}}
+  {{if ne .Params.toc false}}
   <div class="col-xl-10 col-12">
   {{else}}
   <div class="w-75 mx-auto">
@@ -41,7 +40,7 @@
     </div>
   </div>
 
-  {{if ne .File.BaseFileName "about"}}
+  {{if ne .Params.toc false}}
   <div class="d-none col-xl-2 d-xl-block sticky-top h-100 py-2 border-left px-0">
       {{.TableOfContents}}
   </div>

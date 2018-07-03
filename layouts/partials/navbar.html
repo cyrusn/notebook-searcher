@@ -1,5 +1,5 @@
-<div class="bg-light d-md-flex justify-content-center">
-  <nav class="navbar navbar-expand-md navbar-light">
+<div class="bg-light d-sm-flex justify-content-center">
+  <nav class="navbar navbar-expand-sm navbar-light">
     <a class="navbar-brand text-center"
       href='{{ "" | absLangURL }}'>
       {{ .Site.Author.name }}
@@ -38,10 +38,7 @@
         {{ end }}
         {{ end }}
       </ul>
+      {{ partial "tips.html" . }}
     </div>
-    <form class="form-inline">
-      <button type="button" class="mx-2 d-none d-md-block d-lg-block btn btn-sm align-middle btn-outline-info" data-toggle="modal" data-target="#tipsModal">tips</button>
-    </form>
   </nav>
 </div>
-{{ partial "tips.html" . }}

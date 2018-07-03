@@ -2,25 +2,37 @@
 
 Searcher theme for [hugo](https://gohugo.io/) the blog.
 
+# Features
+- toc with scroll spy (disable if set `toc = false` in front matter)
+- full keyboard control
+
+# Navgation guide
+- `Q` to go home
+- `Space` to search
+- `Enter` to start navigate in results
+- `Enter` again to go to selected page
+- `J` / `K` to navigate the list or scroll up and down in page
+- `H` / `L` to navigate the page number
+- `[` / `]` to navigate the navbar
+
 ## Plugins
 
 ``` yaml
 # YAML Front Matter
-
 # enable equation editor
 katex: true
-
 # enable abc music notation
 abcjs: true
-
+# enable mermaid diagram
+mermaid: true
 ```
 
 # Dependencies
 
 ## jquery
 ```sh
-# jquery for bootstrap
 # current version v3.3.1
+# jquery for bootstrap (slim.min)
 curl -o static/js/jquery.slim.min.js https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js
 ```
 
@@ -60,8 +72,8 @@ curl -o static/js/remark-latest.min.js https://remarkjs.com/downloads/remark-lat
 
 ## katex
 ```sh
-# update auto-renderer
 # current version 0.10.0-beta
+# update auto-renderer
 # [GitHub - Khan/KaTeX: Fast math typesetting for the web.](https://github.com/Khan/KaTeX)
 # [KaTeX/README.md at master · Khan/KaTeX · GitHub](https://github.com/Khan/KaTeX/blob/master/contrib/auto-render/README.md)
 curl -o static/css/katex.min.css https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
@@ -71,15 +83,15 @@ curl -o static/js/auto-render.min.js https://cdn.jsdelivr.net/npm/katex@latest/d
 
 ## abcjs
 ```sh
-# update abcjs
 # currrent version 5.1.2
+# update abcjs
 curl -o static/js/abcjs_basic-min.js https://raw.github.com/paulrosen/abcjs/master/bin/abcjs_basic_5.1.2-min.js
 ```
 
 ## mermaid
 ```sh
+# currrent version 7.1.2
 # update mermaid
 # [MermaidJS CDN](https://unpkg.com/mermaid@7.1.2/dist/)
-# currrent version 7.1.2
 curl -o static/js/mermaid.min.js https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
 ```

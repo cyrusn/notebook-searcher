@@ -2,7 +2,6 @@
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
 description:
-toc: true
 draft: true
 katex: false
 mermaid: false
