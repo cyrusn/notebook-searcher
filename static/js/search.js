@@ -16,8 +16,6 @@ function initLunr (cb) {
         pageIndex.forEach(function (doc) {
           this.add(doc)
         }, this)
-
-        this.pipeline.remove(this.stemmer)
       })
     })
     .then(cb)
@@ -44,7 +42,10 @@ function search (query) {
 
 function searchAndDisplayResults (event) {
   // do nothing if no input in search field
-  if (!event.target.value) return
+  if (!event.target.value) {
+    displaySearchResults([])
+    return
+  }
   const searchResult = search(event.target.value)
   displaySearchResults(searchResult)
 }
@@ -68,7 +69,7 @@ function setClass (n) {
 function displaySearchResults (results) {
   let listItems = results.map(({draft, lastmod, uri, title, tags}, n) => {
     const {active, text, badge} = setClass(n)
-    const badges = tags.map((word) => `<a href="/tags/${word}" class='${badge}'>${word}</a>`)
+    const badges = tags.map(word => `<a href="/tags/${word}" class='${badge}'>${word}</a>`)
 
     if (draft) {
       badges.unshift(`<span class="badge badge-danger">draft</span>`)
