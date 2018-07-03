@@ -70,5 +70,16 @@ curl -o static/js/auto-render.min.js https://cdn.jsdelivr.net/npm/katex@latest/d
 ```
 
 ## abcjs
+```sh
+# update abcjs
+# currrent version 5.1.2
+curl -o static/js/abcjs_basic-min.js https://raw.github.com/paulrosen/abcjs/master/bin/abcjs_basic_5.1.2-min.js
+```
 
 ## mermaid
+```sh
+# update mermaid
+# [MermaidJS CDN](https://unpkg.com/mermaid@7.1.2/dist/)
+# currrent version 7.1.2
+curl -o static/js/mermaid.min.js https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
+```
