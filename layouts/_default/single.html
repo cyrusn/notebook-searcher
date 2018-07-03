@@ -1,7 +1,11 @@
 {{ define "main" }}
 <div class="mx-auto row">
-  <div class="col-xl-10 col-12">
 
+  {{if ne .File.BaseFileName "about"}}
+  <div class="col-xl-10 col-12">
+  {{else}}
+  <div class="w-75 mx-auto">
+  {{end}}
     <!-- title -->
     <h1 class="display-4">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
@@ -36,9 +40,12 @@
         {{ .Content }}
     </div>
   </div>
+
+  {{if ne .File.BaseFileName "about"}}
   <div class="d-none col-xl-2 d-xl-block sticky-top h-100 py-2 border-left px-0">
       {{.TableOfContents}}
   </div>
+  {{end}}
 </div>
 {{ if .Site.DisqusShortname }}
 <hr>
