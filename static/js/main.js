@@ -45,13 +45,14 @@ function navigate (keyCode, event) {
   // console.log(keyCode)
   let $active = $('div.active')
   let $list = $('.list-group-item')
+  const scrollheight = 80
   const onFocus = $('#search-box').is(':focus')
   const searchBox = $('#search-box')
   const isDisabled = searchBox.prop('disabled')
   const {hasNext, hasPrev, nextPage, prevPage} = Paginator
 
   switch (true) {
-    case (keyCode === keycodes(']') && !onFocus): // ]
+    case (keyCode === keycodes(']') && !onFocus):
       navLinks.forEach((link, key, array) => {
         if (link === window.location.pathname) {
           const index = (key + 1) % navLinks.length
@@ -78,7 +79,7 @@ function navigate (keyCode, event) {
       break
     case ((keyCode === keycodes('j')) && !onFocus):
       if (pageKind === 'page') {
-        scrollPage('down', 80)
+        scrollPage('down', scrollheight)
       } else {
         toggleActive($active)
         const $next = $active.next()
@@ -93,7 +94,7 @@ function navigate (keyCode, event) {
       break
     case ((keyCode === keycodes('k')) && !onFocus):
       if (pageKind === 'page') {
-        scrollPage('up', 80)
+        scrollPage('up', scrollheight)
       } else {
         toggleActive($active)
         const $prev = $active.prev()
@@ -119,7 +120,7 @@ function navigate (keyCode, event) {
         window.location.href = link
       }
       break
-    case (keyCode === keycodes('enter')): // enter
+    case (keyCode === keycodes('enter')):
       event.preventDefault()
       if (!isDisabled) {
         searchBox.prop('disabled', true)
