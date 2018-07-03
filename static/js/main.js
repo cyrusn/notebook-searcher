@@ -25,9 +25,12 @@ $(document).ready(e => {
 
   // scroll overflowed toc to 1/3 of window height
   $(window).on('activate.bs.scrollspy', function () {
-    let pos = $('li > a.active').last().position()
-    let h = $(window).height()
-    $('#TableOfContents').scrollTop(pos.top - h / 3)
+    // trigger only #TableOfContents is found
+    if ($('#TableOfContents').length) {
+      let pos = $('li > a.active').last().position()
+      let h = $(window).height()
+      $('#TableOfContents').scrollTop(pos.top - h / 3)
+    }
   })
 })
 
