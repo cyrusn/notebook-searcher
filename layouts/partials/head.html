@@ -39,11 +39,19 @@
 <!-- main.js (for navigate the list and other customization)-->
 <script src='{{ "/js/keycodes.js" | relURL }}'></script>
 <script src='{{ "/js/main.js" | relURL }}'></script>
+
+<!--
+  enable dashToCamelCase function to parse params object for plugins in config.toml
+  keys in config.toml are case insensitive. e.g. see mermaid.html as example.
+-->
 <script src='{{ "/js/helper.js" | relURL }}'></script>
 
 <!-- create Paginator object for navigation -->
 <script>
-const pageKind = {{.Kind}}
+
+// as main.js is static js file, therefore pageKind, navLinks and Paginator
+// need to be declared here for later use in main.js
+const pageKind = "{{.Kind}}"
 const navLinks = ['/']
 {{ range .Site.Menus.main.ByWeight }}
   navLinks.push("{{.URL | relURL }}")

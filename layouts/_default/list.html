@@ -31,6 +31,7 @@
   $('#list-0').find('.badge-info').toggleClass('badge-light badge-info')
 
   {{ with .Paginator }}
+  // Paginator is already defined in head.html, and will be used in main.js
   Paginator = {
     hasNext: {{ .HasNext }},
     hasPrev: {{ .HasPrev }},
