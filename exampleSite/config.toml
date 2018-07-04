@@ -6,10 +6,10 @@ metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 paginate = 10
-# disqusShortname = "cyrusngithubio"
+# disqusShortname = "your-disqus-short-name"
 
 # Enable GitInfo feature
-# enableGitInfo = true
+enableGitInfo = true
 
 [blackfriday]
   hrefTargetBlank = true
@@ -20,18 +20,13 @@ paginate = 10
   # logo = "img/avatar.png"
   # favicon = "favicon.ico"
   dateFormat = "2006-01-02"
-  commit = false
-  rss = false
-  comments = true
-  search = true
-  showHint = true
 
 [Author]
-  name = "CyrusN"
-  email = "cyrusncy@gmail.com"
-  github = "cyrusn"
-  facebook = "cyrusncy"
-  twitter = "cyrusncy"
+  name = "Author"
+  email = "author@example.com"
+  github = "Author"
+  facebook = "Author"
+  twitter = "Author"
 
 [[menu.main]]
     name = "Note"

@@ -1,5 +1,5 @@
 ---
-title: "My RemarkJS CSS"
+title: "Notebook-Searcher RemarkJS CSS"
 subtitle: ""
 description:
 draft: false
@@ -203,7 +203,7 @@ class: center middle bg-info text-light
 <!-- reference links -->
 
 [@1]: https://github.com/cyrusn/notebook-searcher
-[@2]: https://www.globallandscapesforum.org/wp-content/uploads/2017/11/situgunung-flipped-1600.jpg
-[@3]: https://www.globallandscapesforum.org/wp-content/uploads/2017/11/situgunung-flipped-1600.jpg
-[@4]: https://www.globallandscapesforum.org/wp-content/uploads/2017/11/situgunung-flipped-1600.jpg
-[@5]: https://www.globallandscapesforum.org/wp-content/uploads/2017/11/situgunung-flipped-1600.jpg
+[@2]: ./situgunung-flipped-1600.jpg
+[@3]: ./situgunung-flipped-1600.jpg
+[@4]: ./situgunung-flipped-1600.jpg
+[@5]: ./situgunung-flipped-1600.jpg
