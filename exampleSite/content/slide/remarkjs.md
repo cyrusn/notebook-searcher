@@ -2,7 +2,6 @@
 title: "Notebook-Searcher RemarkJS CSS"
 subtitle: ""
 description:
-draft: false
 remarkOption: 
   ratio: 16:9
   Navigation:
@@ -11,39 +10,39 @@ remarkOption:
 date: 2018-05-24T19:59:24+08:00
 tags:
   - remark
-
----
-
-# Agenda
-
-- Background
-- Center list
-- Example
-- This is normal image
-- `img-100` class to set max width to 100%
-- `img-75` class to set max width to 75%
-- Also available on ...
-- `overflow` can make the image overflow
-- Blockquote
-- Syntax
-- Two Column
-- Syntax for two column
-- Footnote
-
 ---
 
 class: center middle bg-primary text-light
+
 # RemarkJS - CSS Guide
 <hr class="bg-light">
 ## [Hugo Theme | Notebook-Searcher][@1]
 
 ---
-# Background
 
-- `class: center middle bg-primary text-light` 
+# Features
+
+- Bootstrap + Font Awesome
+- Centered List
+- Scaled Image
+- Scrolling
+- Blockquote
+- Columnar Layout
+- Footnote
 
 ---
-# Center list
+
+# Bootstrap + Font Awesome
+
+Bootstrap 4 and Font Awesome 5 are available in slides.  
+
+<button type="button" class="btn btn-primary">Bootstrap Button</button>
+<i class="fab fa-font-awesome-flag"></i> <i class="far fa-kiss-wink-heart"></i>
+
+---
+
+# Centered List
+
 .blockquote-info[
 > ### Guide
 > Use `.fit-content.mx-auto` to create a centered list
@@ -58,42 +57,52 @@ class: center middle bg-primary text-light
 ]
 ]
 
-
 ---
+
 class: center
-# This is normal image
+
+# This is a normal image
+
 But the image is too .text-danger[**big**]
 ![image][@2]
 
 ---
+
 class: center
 
 # `img-100` class to set max width to 100%
+
 .img-100[![image][@2]]
 
 ---
+
 class: center
 
 # `img-75` class to set max width to 75%
+
 .img-75[![image][@2]]
 
 ---
-# Also available on ...
+
+# Also available ...
+
 - `img-50`
 - `img-25`
 
 ---
+
 class: center
 
-# `overflow` can make the image overflow
+# `scroll` to enable scrolling for long content
 
-Use together with `.img-100` and `h-75` can produce a nice overflowed image
+Use together with `.img-100` and `h-75` to produce a nice overflowed image
 
-.img-100.overflow.h-75[
+.img-100.h-75.scroll[
 ![image][@2]
 ]
 
 ---
+
 # Blockquote
 
 .blockquote-primary[
@@ -101,18 +110,24 @@ Use together with `.img-100` and `h-75` can produce a nice overflowed image
 > This is primary blockquote's content.
 ]
 
-# Syntax
-``` md
+## Syntax
+
+```md
 .blockquote-primary[
 > #### blockquote
 > This is primary blockquote's content.
 ]
 ```
 
-Other available color: `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `light`, `dark`
+Available styles:  
+`primary`, `secondary`, `success`, `info`, `warning`, `danger`, `light`, `dark`
 
 ---
-# Two Column
+
+# Two Columns Layout
+
+Use Bootstrap's `.row`, `.col` to create columnar layout
+
 .row[
 .col-6[
 - This is column 1
@@ -124,12 +139,15 @@ Other available color: `primary`, `secondary`, `success`, `info`, `warning`, `da
 - This is column 2
   + alpha
   + beta
-  + see syntax on next page
+  + see syntax on next slide
 ]
 ]
+
 ---
-# Syntax for two column
-``` md
+
+# Syntax
+
+```md
 .row[
 .col-6[
 - This is column 1
@@ -144,19 +162,52 @@ Other available color: `primary`, `secondary`, `success`, `info`, `warning`, `da
 ]
 ]
 ```
-
 ---
+
 class: row
 
 .col-3.bg-light.sidebar[
 ### Sidebar
 - alpha
 - beta
-- gammer
 ]
 
 .col-9[
-## Syntax 
+## Slide with sidebar 1
+
+Note the last sidebar item will be ***bold italic***
+]
+
+---
+
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+- gamma
+]
+
+.col-9[
+## Slide with sidebar 2
+
+See syntax on next slide
+]
+
+---
+
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+- gamma
+]
+
+.col-9[
+## Syntax
 
 ```md
 class: row
@@ -165,32 +216,33 @@ class: row
 ### Sidebar
 - alpha
 - beta
-- gammer
+- gamma
 ]
 
 .col-9[
-This is the syntax 
+// This syntax block
 ...
 ]
 ```
 ]
 
 ---
+
 # Footnote
 
-This is example.sup[1] of footnote.sup[2], here is google.com.sup[3]
+This is an example.sup[1] of footnotes.sup[2], link to is Google.sup[3]
 .footnote[
 1. Hello! World.
-2. see syntax on next page
+2. Footnoting is fun
 3. https://google.com
 ]
 
 ## Syntax
 ``` md
-This is example.sup[1] of footnote.sup[2], here is google.com.sup[3]
+This is an example.sup[1] of footnotes.sup[2], link to is Google.sup[3]
 .footnote[
 1. Hello! World.
-2. see syntax on next page
+2. Footnoting is fun
 3. https://google.com
 ]
 ```
@@ -203,7 +255,7 @@ class: center middle bg-info text-light
 <!-- reference links -->
 
 [@1]: https://github.com/cyrusn/notebook-searcher
-[@2]: ./situgunung-flipped-1600.jpg
-[@3]: ./situgunung-flipped-1600.jpg
-[@4]: ./situgunung-flipped-1600.jpg
-[@5]: ./situgunung-flipped-1600.jpg
+[@2]: ./1600x1000.jpg
+[@3]: ./1600x1000.jpg
+[@4]: ./1600x1000.jpg
+[@5]: ./1600x1000.jpg

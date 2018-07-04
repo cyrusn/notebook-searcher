@@ -80,7 +80,7 @@ tr th:not(:last-child) {
   list-style: decimal;
 }
 
-.overflow {
+.scroll {
   overflow-y: scroll;
   height: 100%;
 }
