@@ -2,7 +2,7 @@
 title: "mermaid"
 subtitle: "mermaid example"
 description:
-draft: false
+draft: true
 katex: false
 mermaid: true
 abcjs: false

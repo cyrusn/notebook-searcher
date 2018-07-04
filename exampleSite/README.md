@@ -3,5 +3,5 @@
 ## Run this example site
 ``` sh
 # cd notebook-searcher
-hugo server --watch --themesDir ../.. --source ./exampleSite
+hugo serve -D --themesDir ../.. --source ./exampleSite
 ```
