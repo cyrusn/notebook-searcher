@@ -1,0 +1,65 @@
+# baseurl = "https://cyrusn.github.io"
+DefaultContentLanguage = "en"
+title = "Notebook | CyrusN"
+theme = "notebook-searcher"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+paginate = 10
+# disqusShortname = "cyrusngithubio"
+
+# Enable GitInfo feature
+# enableGitInfo = true
+
+[blackfriday]
+  hrefTargetBlank = true
+  # extensions = ["hardLineBreak"]
+
+[Params]
+  subtitle = "My Notes"
+  # logo = "img/avatar.png"
+  # favicon = "favicon.ico"
+  dateFormat = "2006-01-02"
+  commit = false
+  rss = false
+  comments = true
+  search = true
+  showHint = true
+
+[Author]
+  name = "CyrusN"
+  email = "cyrusncy@gmail.com"
+  github = "cyrusn"
+  facebook = "cyrusncy"
+  twitter = "cyrusncy"
+
+[[menu.main]]
+    name = "Note"
+    identifier = "note"
+    url = "/note/"
+    weight = 2
+
+[[menu.main]]
+    name = "Post"
+    identifier = "post"
+    url = "/post/"
+    weight = 3
+
+[[menu.main]]
+    name = "Slide"
+    identifier = "slide"
+    url = "/slide/"
+    weight = 5
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 10
+
+[[menu.main]]
+name = "About"
+url = "/page/about/"
+weight = 20
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
