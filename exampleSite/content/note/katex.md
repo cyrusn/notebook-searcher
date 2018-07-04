@@ -2,15 +2,11 @@
 title: "katex"
 subtitle: "katex example"
 description:
-draft: false
 katex: true
-mermaid: false
-abcjs: false
 date: 2018-07-04T06:50:40+08:00
 tags:
   - katex
 ---
-
 
 # Cheat Sheet
 - [Download][@1]

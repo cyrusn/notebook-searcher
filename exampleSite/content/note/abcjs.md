@@ -2,9 +2,6 @@
 title: "abcjs"
 subtitle: "abcjs example"
 description:
-draft: false
-katex: false
-mermaid: false
 abcjs: true
 date: 2018-07-04T06:50:29+08:00
 tags:
@@ -13,11 +10,10 @@ tags:
   - music
 ---
 
-
 # References
+
 - [paulrosen/abcjs: javascript for rendering abc music notation][@1]
 - [ABC Music Notation][@2]
-
 
 # Example - Lyrics
 

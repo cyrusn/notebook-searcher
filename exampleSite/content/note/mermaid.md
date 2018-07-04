@@ -2,10 +2,7 @@
 title: "mermaid"
 subtitle: "mermaid example"
 description:
-draft: true
-katex: false
 mermaid: true
-abcjs: false
 date: 2018-07-04T06:50:34+08:00
 tags:
   - flow chart
@@ -14,6 +11,7 @@ tags:
 # Example
 
 # An example of a flowchart
+
 {{< mermaid >}}
 graph TD;
     A-->B;
@@ -24,8 +22,8 @@ graph TD;
 
 
 # An example of a sequence diagram
-{{< mermaid >}}
 
+{{< mermaid >}}
 sequenceDiagram
     participant Alice
     participant Bob
@@ -41,6 +39,7 @@ sequenceDiagram
 
 
 # An example of a gantt diagram
+
 {{< mermaid >}}
 gantt
         dateFormat  YYYY-MM-DD
