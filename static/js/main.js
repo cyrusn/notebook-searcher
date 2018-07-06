@@ -108,8 +108,8 @@ function navigate (keyCode, event) {
       }
       break
     case (keyCode === keycodes('space') && !onFocus):
-      event.preventDefault()
-      if (isDisabled) {
+      if (isDisabled && pageKind === 'page') {
+        event.preventDefault()
         searchBox.prop('disabled', false)
         searchBox.focus()
       }
