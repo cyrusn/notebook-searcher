@@ -1,4 +1,4 @@
-/* global $ window Paginator navLinks pageKind */
+/* global $ window Paginator navLinks pageKind keycodes */
 $(document).ready(e => {
   listenKeys()
   $('[data-toggle="tooltip"]').tooltip({
@@ -42,7 +42,6 @@ function listenKeys () {
 }
 
 function navigate (keyCode, event) {
-  // console.log(keyCode)
   let $active = $('div.active')
   let $list = $('.list-group-item')
   const scrollheight = 80
