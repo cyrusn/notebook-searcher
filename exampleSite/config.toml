@@ -1,4 +1,3 @@
-# baseurl = "https://cyrusn.github.io"
 DefaultContentLanguage = "en"
 title = "Notebook | CyrusN"
 theme = "notebook-searcher"
@@ -6,27 +5,27 @@ metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 paginate = 10
+# baseURL = "http://example.org/"
 # disqusShortname = "your-disqus-short-name"
 
-# Enable GitInfo feature
-enableGitInfo = true
+# # Enable GitInfo feature
+# # Get the last Git revision information for every content file.
+# # The date of "Last Modified" can be fetched from Git
+# # [Git Info Variables | Hugo](https://gohugo.io/variables/git/#lastmod)
+# enableGitInfo = true
 
 [blackfriday]
   hrefTargetBlank = true
-  # extensions = ["hardLineBreak"]
 
 [Params]
   subtitle = "My Notes"
+  dateFormat = "2006-01-02"
   # logo = "img/avatar.png"
   # favicon = "favicon.ico"
-  dateFormat = "2006-01-02"
 
 [Author]
   name = "Author"
   email = "author@example.com"
-  github = "Author"
-  facebook = "Author"
-  twitter = "Author"
 
 [[menu.main]]
     name = "Note"
