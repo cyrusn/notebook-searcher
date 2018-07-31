@@ -1,42 +1,45 @@
 # Notebook Searcher
 
-Searcher theme for [hugo](https://gohugo.io/) the blog.
+Searcher theme for [hugo][@1] blog.
+
+## Run the example site
+
+``` sh
+# in `notebook-searcher/`
+hugo serve -D --themesDir ../.. --source ./exampleSite
+```
 
 # Features
-- toc with scroll spy (disable if set `toc = false` in front matter)
-- full keyboard control
 
-# Navgation guide
-- `Q` to go home
-- `Space` to search
-- `Enter` to start navigate in results
-- `Enter` again to go to selected page
-- `J` / `K` to navigate the list or scroll up and down in page
-- `H` / `L` to navigate the page number
-- `[` / `]` to navigate the navbar
+- search posts on list page
+- full keyboard navigation
+  check `Tips` on example for navigation guide
+- TOC with scroll spy
+  TOC is enabled by default, set `toc` to `false` in front matter to disable it
+- Katex plugin
+- abcjs plugin
+- mermaid plugin
+- RemarkJS slides
+  Posts in `/slide` will be loaded with RemarkJS. See `exampleSite/note/` for details.
 
-## Plugins
-
-``` yaml
-# YAML Front Matter
-# enable equation editor
-katex: true
-# enable abc music notation
-abcjs: true
-# enable mermaid diagram
-mermaid: true
-```
+Several shortcodes are defined for the plugins. The post must enable the plugin *explicitly* in front matter so the corresponding dependencies will be added to the page.  
+See `exampleSite/note/` for details.
 
 # Dependencies
 
-## jquery
+Dependencies are placed in `static/`. Any versioning in file name is stripped.  
+`current version` below denotes the version in `static/`.  
+To update dependencies, execute the following command and update `current version`.
+
+## jQuery
+
 ```sh
 # current version v3.3.1
-# jquery for bootstrap (slim.min)
+# jQuery for bootstrap (slim.min)
 wget https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js -O static/js/jquery.slim.min.js
 ```
 
-## bootstrap
+## Bootstrap
 
 ```sh
 # current version v4.1.1
@@ -47,7 +50,8 @@ wget https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css -O
 
 ```
 
-## font-awesome
+## Font Awesome
+
 ```sh
 # current version v5.1.0
 # [Getting Started | Font Awesome](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js)
@@ -69,8 +73,8 @@ wget https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.0/lunr.min.js -O static/
 wget https://remarkjs.com/downloads/remark-latest.min.js -O static/js/remark-latest.min.js 
 ```
 
-
 ## katex
+
 ```sh
 # current version 0.10.0-beta
 # update auto-renderer
@@ -82,6 +86,7 @@ wget https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js -
 ```
 
 ## abcjs
+
 ```sh
 # currrent version 5.1.2
 # update abcjs
@@ -90,6 +95,7 @@ wget https://raw.github.com/paulrosen/abcjs/master/bin/abcjs_basic_5.1.2-min.js 
 ```
 
 ## mermaid
+
 ```sh
 # currrent version 7.1.2
 # update mermaid
