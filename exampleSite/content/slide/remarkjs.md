@@ -230,7 +230,7 @@ class: row
 
 # Footnote
 
-This is an example.sup[1] of footnotes.sup[2], link to is Google.sup[3]
+This is an example.sup[1] of footnotes.sup[2], link to Google.sup[3]
 .footnote[
 1. Hello! World.
 2. Footnoting is fun
@@ -239,7 +239,7 @@ This is an example.sup[1] of footnotes.sup[2], link to is Google.sup[3]
 
 ## Syntax
 ``` md
-This is an example.sup[1] of footnotes.sup[2], link to is Google.sup[3]
+This is an example.sup[1] of footnotes.sup[2], link to Google.sup[3]
 .footnote[
 1. Hello! World.
 2. Footnoting is fun
