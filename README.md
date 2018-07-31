@@ -12,18 +12,35 @@ hugo serve -D --themesDir ../.. --source ./exampleSite
 # Features
 
 - search posts on list page
-- full keyboard navigation
+- full keyboard navigation  
   check `Tips` on example for navigation guide
-- TOC with scroll spy
+- TOC with scroll spy  
   TOC is enabled by default, set `toc` to `false` in front matter to disable it
 - Katex plugin
 - abcjs plugin
 - mermaid plugin
-- RemarkJS slides
+- RemarkJS slides  
   Posts in `/slide` will be loaded with RemarkJS. See `exampleSite/note/` for details.
 
 Several shortcodes are defined for the plugins. The post must enable the plugin *explicitly* in front matter so the corresponding dependencies will be added to the page.  
 See `exampleSite/note/` for details.
+
+## Search feature
+
+```
+# simply type the keyword to search words in title, tags or filename.
+e.g. `abcjs`
+# using wild card
+e.g. `abc*`
+# search keywords in title only
+e.g. `title: abcjs`
+# search keywords in tags only
+e.g. `tags: music`
+# fuzzy search
+# please note that lunrjs will return error message if you just type `~`
+# without number followed it
+e.g. abcde~2
+```
 
 # Dependencies
 
