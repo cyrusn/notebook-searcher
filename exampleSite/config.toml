@@ -1,5 +1,5 @@
 DefaultContentLanguage = "en"
-title = "Notebook | CyrusN"
+title = "Example Site | notebook-searcher"
 theme = "notebook-searcher"
 metaDataFormat = "yaml"
 pygmentsUseClasses = true
