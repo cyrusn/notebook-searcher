@@ -119,7 +119,7 @@ function navigate (keyCode, event) {
         window.location.href = link
       }
       break
-    case (keyCode === keycodes('enter')):
+    case (keyCode === keycodes('enter') || keyCode === keycodes('esc')):
       event.preventDefault()
       if (!isDisabled) {
         searchBox.prop('disabled', true)
