@@ -20,7 +20,7 @@ hugo serve -D --themesDir ../.. --source ./exampleSite
 - abcjs plugin
 - mermaid plugin
 - RemarkJS slides  
-  Posts in `/slide` will be loaded with RemarkJS. See `exampleSite/note/` for details.
+  Posts in `/slide` will be loaded with RemarkJS. See `exampleSite/slide/` for details.
 
 Several shortcodes are defined for the plugins. The post must enable the plugin *explicitly* in front matter so the corresponding dependencies will be added to the page.  
 See `exampleSite/note/` for details.
