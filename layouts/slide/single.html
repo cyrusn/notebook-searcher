@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8">
   <!-- RemarkJS (for slide view) -->
-  <link rel="stylesheet" type="text/css" href='{{"./css/remark.css"|relURL}}'>
+
+  {{if .Params.css}}
+    <link rel="stylesheet" type="text/css" href='{{ .Params.css |relURL}}'>
+  {{else}}
+    <link rel="stylesheet" type="text/css" href='{{"./css/remark.css"|relURL}}'>
+      <!-- Bootstrap -->
+      {{ partial "bootstrap.html" .}}
+  {{end}}
+  <script src='{{ "/js/jquery.slim.min.js" | relURL }}'></script>
   <script src='{{ "/js/remark-latest.min.js" | relURL }}'></script>
-  <!-- Bootstrap -->
-  {{ partial "bootstrap.html" .}}
 
   <script src='{{ "/js/helper.js" | relURL }}'></script>
   <!-- font-awesome -->
