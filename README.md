@@ -1,6 +1,6 @@
 # Notebook Searcher
 
-Searcher theme for [hugo][@1] blog.
+Searcher theme for [hugo](https://github.com/gohugoio/hugo) blog.
 
 ## Run the example site
 
