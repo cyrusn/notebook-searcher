@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Example Site | notebook-searcher</title>
+    <link>/notebook-searcher/page/</link>
+    <description>Recent content in Pages on Example Site | notebook-searcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>author@example.com (Author)</managingEditor>
+    <webMaster>author@example.com (Author)</webMaster>
+    
+	<atom:link href="/notebook-searcher/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>/notebook-searcher/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>author@example.com (Author)</author>
+      <guid>/notebook-searcher/page/about/</guid>
+      <description>This is an about page, you may disable the toc by setting toc = false in front matter
+ A teacher has two jobs. Fill young minds with knowledge, yes. But more important, give those minds a compass so that the knowledge doesn&amp;rsquo;t go to waste. From the movie: Mr Holland&amp;rsquo;s Opus 
+ </description>
+    </item>
+    
+  </channel>
+</rss>

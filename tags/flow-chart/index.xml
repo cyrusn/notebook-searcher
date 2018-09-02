@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flow Chart on Example Site | notebook-searcher</title>
+    <link>/notebook-searcher/tags/flow-chart/</link>
+    <description>Recent content in Flow Chart on Example Site | notebook-searcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>author@example.com (Author)</managingEditor>
+    <webMaster>author@example.com (Author)</webMaster>
+    <lastBuildDate>Wed, 04 Jul 2018 06:50:34 +0800</lastBuildDate>
+    
+	<atom:link href="/notebook-searcher/tags/flow-chart/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mermaid</title>
+      <link>/notebook-searcher/note/mermaid/</link>
+      <pubDate>Wed, 04 Jul 2018 06:50:34 +0800</pubDate>
+      <author>author@example.com (Author)</author>
+      <guid>/notebook-searcher/note/mermaid/</guid>
+      <description> Example An example of a flowchart graph TD; A--B; A--C; B--D; C--D;  An example of a sequence diagram sequenceDiagram participant Alice participant Bob Alice-John: Hello John, how are you? loop Healthcheck John-John: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--Alice: Great! John-Bob: How about you? Bob--John: Jolly good!  An example of a gantt diagram gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on Example Site | notebook-searcher</title>
+    <link>/notebook-searcher/slide/</link>
+    <description>Recent content in Slides on Example Site | notebook-searcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>author@example.com (Author)</managingEditor>
+    <webMaster>author@example.com (Author)</webMaster>
+    <lastBuildDate>Thu, 24 May 2018 19:59:24 +0800</lastBuildDate>
+    
+	<atom:link href="/notebook-searcher/slide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom RemarkJS CSS</title>
+      <link>/notebook-searcher/slide/custom/</link>
+      <pubDate>Thu, 24 May 2018 19:59:24 +0800</pubDate>
+      <author>author@example.com (Author)</author>
+      <guid>/notebook-searcher/slide/custom/</guid>
+      <description> class: center, middle
+Custom CSS How to use customized CSS? User can customise style by adding css attribute to front matter
+# provide location to custom css, the css file is suggested to put in /static/css css: &amp;quot;css/custom.css&amp;quot;  class: center, middle
+Thanks   </description>
+    </item>
+    
+    <item>
+      <title>Notebook-Searcher RemarkJS CSS</title>
+      <link>/notebook-searcher/slide/remarkjs/</link>
+      <pubDate>Thu, 24 May 2018 19:59:24 +0800</pubDate>
+      <author>author@example.com (Author)</author>
+      <guid>/notebook-searcher/slide/remarkjs/</guid>
+      <description>class: center middle bg-primary text-light
+RemarkJS - CSS Guide Hugo Theme | Notebook-Searcher Features  Bootstrap + Font Awesome Centered List Scaled Image Scrolling Blockquote Columnar Layout Footnote  Bootstrap + Font Awesome Bootstrap 4 and Font Awesome 5 are available in slides.
+Bootstrap Button  
+Centered List .blockquote-info[ &amp;gt; ### Guide &amp;gt; Use .fit-content.mx-auto to create a centered list ]
+.center[
+Example .fit-content.mx-auto[ - apple - orange - pear ] ]</description>
+    </item>
+    
+  </channel>
+</rss>

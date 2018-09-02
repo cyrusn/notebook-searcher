@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <script src='/notebook-searcher/js/jquery.slim.min.js'></script>
+
+  
+    <link rel="stylesheet" type="text/css" href='/notebook-searcher/css/custom.css'>
+  
+  <script src='/notebook-searcher/js/remark-latest.min.js'></script>
+
+  <script src='/notebook-searcher/js/helper.js'></script>
+  
+  <script>
+  FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
+</script>
+<script defer src=' /notebook-searcher/js/fontawesome-all.min.js '></script>
+
+
+</head>
+
+<body class="text-dark">
+<div id="source">
+class: center, middle
+# Custom CSS
+
+---
+
+# How to use customized CSS?
+
+User can customise style by adding css attribute to front matter
+
+```yaml
+# provide location to custom css, the css file is suggested to put in /static/css
+css: &#34;css/custom.css&#34;
+```
+
+---
+class: center, middle
+
+# Thanks &lt;i class=&#34;fab fa-font-awesome-flag&#34;&gt;&lt;/i&gt; &lt;i class=&#34;far fa-kiss-wink-heart&#34;&gt;&lt;/i&gt;
+
+</div>
+
+
+
+<script>
+  
+  
+  
+  const option = {}
+  const remarkOption = Object.assign({}, "", {"navigation":{"click":true,"scroll":false},"ratio":"16:9"})
+
+  for (const key in remarkOption) {
+    option[dashToCamelCase(key)] = remarkOption[key]
+  }
+
+  
+  const slideshow = remark.create(option)
+  
+</script>
+
+
+
+
+
+
+
+<script>
+  document.onkeypress = ({which, keyCode} = window.event) => {
+    const charCode = (typeof which === 'number') ? which : keyCode
+    if (charCode === 113) {
+      window.location.href = '/'
+    }
+  }
+
+  document.getElementsByTagName('a').map(a => a.setAttribute('target', '_blank'))
+
+  $('a:not(a:has(img))').prepend(
+    '<i class="fas fa-link fa-xs"></i><span>&nbsp;</span>'
+  )
+</script>
+
+</body>
+
+</html>

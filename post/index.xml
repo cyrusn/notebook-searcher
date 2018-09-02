@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Example Site | notebook-searcher</title>
+    <link>/notebook-searcher/post/</link>
+    <description>Recent content in Posts on Example Site | notebook-searcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>author@example.com (Author)</managingEditor>
+    <webMaster>author@example.com (Author)</webMaster>
+    <lastBuildDate>Wed, 04 Jul 2018 06:51:41 +0800</lastBuildDate>
+    
+	<atom:link href="/notebook-searcher/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Syntax</title>
+      <link>/notebook-searcher/post/markdown_syntax/</link>
+      <pubDate>Wed, 04 Jul 2018 06:51:41 +0800</pubDate>
+      <author>author@example.com (Author)</author>
+      <guid>/notebook-searcher/post/markdown_syntax/</guid>
+      <description>Overview Philosophy Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it&amp;rsquo;s been marked up with tags or formatting instructions. While Markdown&amp;rsquo;s syntax has been influenced by several existing text-to-HTML filters &amp;ndash; including Setext, atx, Textile, reStructuredText, Grutatext, and EtText &amp;ndash; the single biggest source of inspiration for Markdown&amp;rsquo;s syntax is the format of plain text email.</description>
+    </item>
+    
+  </channel>
+</rss>

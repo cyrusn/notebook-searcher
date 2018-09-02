@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <script src='/notebook-searcher/js/jquery.slim.min.js'></script>
+
+  
+    <link rel="stylesheet" type="text/css" href='/notebook-searcher/css/remark.css'>
+      
+      <link rel="stylesheet" type="text/css" href='/notebook-searcher/css/bootstrap.min.css'>
+<script src='/notebook-searcher/js/bootstrap.bundle.min.js' ></script>
+
+  
+  <script src='/notebook-searcher/js/remark-latest.min.js'></script>
+
+  <script src='/notebook-searcher/js/helper.js'></script>
+  
+  <script>
+  FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
+</script>
+<script defer src=' /notebook-searcher/js/fontawesome-all.min.js '></script>
+
+
+</head>
+
+<body class="text-dark">
+<div id="source">
+class: center middle bg-primary text-light
+
+# RemarkJS - CSS Guide
+&lt;hr class=&#34;bg-light&#34;&gt;
+## [Hugo Theme | Notebook-Searcher][@1]
+
+---
+
+# Features
+
+- Bootstrap &#43; Font Awesome
+- Centered List
+- Scaled Image
+- Scrolling
+- Blockquote
+- Columnar Layout
+- Footnote
+
+---
+
+# Bootstrap &#43; Font Awesome
+
+Bootstrap 4 and Font Awesome 5 are available in slides.  
+
+&lt;button type=&#34;button&#34; class=&#34;btn btn-primary&#34;&gt;Bootstrap Button&lt;/button&gt;
+&lt;i class=&#34;fab fa-font-awesome-flag&#34;&gt;&lt;/i&gt; &lt;i class=&#34;far fa-kiss-wink-heart&#34;&gt;&lt;/i&gt;
+
+---
+
+# Centered List
+
+.blockquote-info[
+&gt; ### Guide
+&gt; Use `.fit-content.mx-auto` to create a centered list
+]
+
+.center[
+# Example
+.fit-content.mx-auto[
+- apple
+- orange
+- pear
+]
+]
+
+---
+
+class: center
+
+# This is a normal image
+
+But the image is too .text-danger[**big**]
+![image][@2]
+
+---
+
+class: center
+
+# `img-100` class to set max width to 100%
+
+.img-100[![image][@2]]
+
+---
+
+class: center
+
+# `img-75` class to set max width to 75%
+
+.img-75[![image][@2]]
+
+---
+
+# Also available ...
+
+- `img-50`
+- `img-25`
+
+---
+
+class: center
+
+# `scroll` to enable scrolling for long content
+
+Use together with `.img-100` and `h-75` to produce a nice overflowed image
+
+.img-100.h-75.scroll[
+![image][@2]
+]
+
+---
+
+# Blockquote
+
+.blockquote-primary[
+&gt; ### blockquote
+&gt; This is primary blockquote&#39;s content.
+]
+
+## Syntax
+
+```md
+.blockquote-primary[
+&gt; #### blockquote
+&gt; This is primary blockquote&#39;s content.
+]
+```
+
+Available styles:  
+`primary`, `secondary`, `success`, `info`, `warning`, `danger`, `light`, `dark`
+
+---
+
+# Two Columns Layout
+
+Use Bootstrap&#39;s `.row`, `.col` to create columnar layout
+
+.row[
+.col-6[
+- This is column 1
+  &#43; apple
+  &#43; orange
+]
+
+.col-6[
+- This is column 2
+  &#43; alpha
+  &#43; beta
+  &#43; see syntax on next slide
+]
+]
+
+---
+
+# Syntax
+
+```md
+.row[
+.col-6[
+- This is column 1
+  &#43; apple
+  &#43; orange
+]
+
+.col-6[
+- This is column 2
+  &#43; alpha
+  &#43; beta
+]
+]
+```
+---
+
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+]
+
+.col-9[
+## Slide with sidebar 1
+
+Note the last sidebar item will be ***bold italic***
+]
+
+---
+
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+- gamma
+]
+
+.col-9[
+## Slide with sidebar 2
+
+See syntax on next slide
+]
+
+---
+
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+- gamma
+]
+
+.col-9[
+## Syntax
+
+```md
+class: row
+
+.col-3.bg-light.sidebar[
+### Sidebar
+- alpha
+- beta
+- gamma
+]
+
+.col-9[
+// This syntax block
+...
+]
+```
+]
+
+---
+
+# Footnote
+
+This is an example.sup[1] of footnotes.sup[2], link to Google.sup[3]
+.footnote[
+1. Hello! World.
+2. Footnoting is fun
+3. https://google.com
+]
+
+## Syntax
+``` md
+This is an example.sup[1] of footnotes.sup[2], link to Google.sup[3]
+.footnote[
+1. Hello! World.
+2. Footnoting is fun
+3. https://google.com
+]
+```
+ 
+---
+class: center middle bg-info text-light
+
+# .text-danger[♥] Thanks .text-danger[♥]
+
+&lt;!-- reference links --&gt;
+
+[@1]: https://github.com/cyrusn/notebook-searcher
+[@2]: ./1600x1000.jpg
+[@3]: ./1600x1000.jpg
+[@4]: ./1600x1000.jpg
+[@5]: ./1600x1000.jpg
+
+</div>
+
+
+
+<script>
+  
+  
+  
+  const option = {}
+  const remarkOption = Object.assign({}, "", {"navigation":{"click":true,"scroll":false},"ratio":"16:9"})
+
+  for (const key in remarkOption) {
+    option[dashToCamelCase(key)] = remarkOption[key]
+  }
+
+  
+  const slideshow = remark.create(option)
+  
+</script>
+
+
+
+
+
+
+
+<script>
+  document.onkeypress = ({which, keyCode} = window.event) => {
+    const charCode = (typeof which === 'number') ? which : keyCode
+    if (charCode === 113) {
+      window.location.href = '/'
+    }
+  }
+
+  document.getElementsByTagName('a').map(a => a.setAttribute('target', '_blank'))
+
+  $('a:not(a:has(img))').prepend(
+    '<i class="fas fa-link fa-xs"></i><span>&nbsp;</span>'
+  )
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <title>mermaid</title>
+
+
+  <meta name="description" content="mermaid example">
+  <meta property="og:description" content="mermaid example">
+  <meta name="twitter:description" content="mermaid example">
+
+  
+  <meta name="author" content="Author"/>
+
+<script src='/notebook-searcher/js/jquery.slim.min.js'></script>
+
+<link rel="stylesheet" type="text/css" href='/notebook-searcher/css/bootstrap.min.css'>
+<script src='/notebook-searcher/js/bootstrap.bundle.min.js' ></script>
+
+
+
+<script>
+  FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
+</script>
+<script defer src=' /notebook-searcher/js/fontawesome-all.min.js '></script>
+
+
+
+<script src=' /notebook-searcher/js/lunr.min.js '></script>
+
+
+<link rel="stylesheet" type="text/css" href='/notebook-searcher/css/style.css'>
+
+
+<script src='/notebook-searcher/js/keycodes.js'></script>
+<script src='/notebook-searcher/js/main.js'></script>
+
+
+<script src='/notebook-searcher/js/helper.js'></script>
+
+
+<script>
+
+
+
+const pageKind = 'page'
+const baseURL = '\/notebook-searcher'
+const navLinks = ['\/notebook-searcher\/']
+
+  navLinks.push('\/notebook-searcher\/note\/')
+
+  navLinks.push('\/notebook-searcher\/post\/')
+
+  navLinks.push('\/notebook-searcher\/slide\/')
+
+  navLinks.push('\/notebook-searcher\/tags\/')
+
+  navLinks.push('\/notebook-searcher\/page\/about\/')
+
+
+var Paginator = {}
+</script>
+
+
+
+
+
+
+
+</head>
+  <body data-spy="scroll" data-target="#TableOfContents">
+  <div class="bg-light d-sm-flex justify-content-center">
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand text-center"
+      href='/notebook-searcher'>
+      Author
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" title="Note" href="/notebook-searcher/note/">Note</a>
+        </li>
+        
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" title="Post" href="/notebook-searcher/post/">Post</a>
+        </li>
+        
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" title="Slide" href="/notebook-searcher/slide/">Slide</a>
+        </li>
+        
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" title="Tags" href="/notebook-searcher/tags/">Tags</a>
+        </li>
+        
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" title="About" href="/notebook-searcher/page/about/">About</a>
+        </li>
+        
+        
+      </ul>
+      
+<form class="form-inline">
+  <button type="button" class="mx-2 d-none d-md-block d-lg-block btn btn-sm align-middle btn-outline-info" data-toggle="modal" data-target="#tipsModal">tips</button>
+</form>
+<div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="tipsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-light">
+        <h5 class="modal-title" id="tipsModalLabel">Tips</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="text-light">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body py-1">
+        <p class="text-secondary">
+          <ul class="list-unstyled">
+              <li><kbd>q</kbd> to go home</li>
+              <li><kbd>/</kbd> to search</li>
+              <li><kbd>Enter / ESC</kbd> to switch from search to list navigation</li>
+              <li><kbd>Enter</kbd> to go to selected page</li>
+              <li><kbd>j / k</kbd> to navigate the list</li>
+              <li><kbd>h / l</kbd> to navigate the pages in list</li>
+              <li><kbd>[ / ]</kbd> to navigate the navbar</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </nav>
+</div>
+
+  <div class="container mt-2 mx-auto mb-4 text-dark">
+    
+<div class="mx-auto row">
+  
+  <div class="col-xl-10 col-12">
+  
+    
+    <h1 class="display-4">mermaid</h1>
+    
+
+    
+    <h2 class="text-muted font-weight-bold pt-0">mermaid example</h2>
+    
+
+    
+    
+
+    
+    <p>
+      <small>
+  
+  
+  
+</small>
+
+<small>
+
+  <a class="badge badge-info" href="/tags/flow-chart">flow chart</a>
+
+</small>
+
+
+
+      
+      
+        <br>
+<small>
+  <span class="badge badge-success">Created on 2018-07-04</span>
+  <span class="badge badge-success">Last Modified 2018-07-04</span>
+</small>
+
+      
+    </p>
+    <hr>
+    <div class="mx-auto" id="content">
+        
+
+<h1 id="example">Example</h1>
+
+<h1 id="an-example-of-a-flowchart">An example of a flowchart</h1>
+
+<div class="mermaid my-2">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
+
+
+<h1 id="an-example-of-a-sequence-diagram">An example of a sequence diagram</h1>
+
+<div class="mermaid my-2">
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!
+</div>
+
+
+<h1 id="an-example-of-a-gantt-diagram">An example of a gantt diagram</h1>
+
+<p><div class="mermaid my-2">
+gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+</div>
+</p>
+
+    </div>
+  </div>
+
+  
+  <div class="d-none col-xl-2 d-xl-block sticky-top h-100 py-2 border-left px-0">
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#an-example-of-a-flowchart">An example of a flowchart</a></li>
+<li><a href="#an-example-of-a-sequence-diagram">An example of a sequence diagram</a></li>
+<li><a href="#an-example-of-a-gantt-diagram">An example of a gantt diagram</a></li>
+</ul>
+</nav>
+  </div>
+  
+</div>
+
+
+    
+<link rel="stylesheet" href='/notebook-searcher/css/highlightjs/solarized-dark.css'>
+<script src='/notebook-searcher/js/highlight.pack.js'></script>
+<script>
+   
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+
+
+
+
+
+
+
+
+<script src='/notebook-searcher/js/mermaid.min.js'></script>
+<script>
+   
+
+  
+  const config = {}
+
+  const defaultConfig = {
+    startOnLoad: false
+  }
+
+  const obj = Object.assign({}, defaultConfig, "", "")
+
+  for (const key in obj) {
+    config[dashToCamelCase(key)] = obj[key]
+  }
+
+  mermaid.initialize(config)
+
+  
+    mermaid.init()
+  
+</script>
+
+
+
+  </div>
+</body>
+</html>
