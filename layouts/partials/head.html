@@ -16,8 +16,8 @@
   <meta name="twitter:description" content="{{ . | truncate 200 }}">
 {{- end }}
 
-<!-- About Author -->
-<meta name="author" content="{{ .Site.Author.name }}"/>
+  <!-- About Author -->
+  <meta name="author" content="{{ .Site.Author.name }}"/>
 
 <!-- Favicon -->
 {{- with .Site.Params.favicon }}
@@ -52,10 +52,11 @@
 
 // as main.js is static js file, therefore pageKind, navLinks and Paginator
 // need to be declared here for later use in main.js
-const pageKind = "{{.Kind}}"
-const navLinks = ['/']
+const pageKind = '{{.Kind}}'
+const baseURL = '{{ "" | absLangURL }}'
+const navLinks = ['{{ "/" | relURL }}']
 {{ range .Site.Menus.main.ByWeight }}
-  navLinks.push("{{.URL | relURL }}")
+  navLinks.push('{{ .URL | relURL }}')
 {{end}}
 
 var Paginator = {}

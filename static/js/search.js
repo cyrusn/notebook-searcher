@@ -3,7 +3,7 @@
 var pageIndex, lunrIndex
 
 function initLunr (cb) {
-  fetch('/index.json')
+  fetch(baseURL + '/index.json')
     .then(response => response.json())
     .then(data => {
       pageIndex = data

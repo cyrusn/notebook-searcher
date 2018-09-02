@@ -5,7 +5,7 @@ metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 paginate = 10
-# baseURL = "http://example.org/"
+baseURL = "/notebook-searcher"
 # disqusShortname = "your-disqus-short-name"
 
 # # Enable GitInfo feature

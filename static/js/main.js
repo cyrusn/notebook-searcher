@@ -74,7 +74,7 @@ function navigate (keyCode, event) {
       window.location.pathname = prevPage
       break
     case (keyCode === keycodes('q') && !onFocus):
-      window.location.href = '/'
+      window.location.href = baseURL
       break
     case ((keyCode === keycodes('j')) && !onFocus):
       if (pageKind === 'page') {
